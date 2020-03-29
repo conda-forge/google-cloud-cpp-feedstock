@@ -12,8 +12,14 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
+google_cloud_cpp_common:
+- '0.24'
+googleapis_cpp:
+- '0.7'
 grpc_cpp:
 - '1.27'
+libcrc32c:
+- '1.1'
 libcurl:
 - '7.64'
 libprotobuf:
