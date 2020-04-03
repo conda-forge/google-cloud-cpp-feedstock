@@ -2,6 +2,6 @@ __migrator:
   build_number: 1
   kind: version
   migration_number: 1
-google_cloud_cpp_common:
-- 0.25.0
-migrator_ts: 1585763391.3137255
+grpc_cpp:
+- 1.28.0
+migrator_ts: 1585846271.1875432
