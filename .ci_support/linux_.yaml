@@ -15,20 +15,18 @@ docker_image:
 google_cloud_cpp_common:
 - 0.25.0
 googleapis_cpp:
-- '0.7'
+- '0.8'
 grpc_cpp:
-- 1.28.0
+- '1.28'
 libcrc32c:
 - '1.1'
 libcurl:
-- '7.64'
+- '7'
 libprotobuf:
 - '3.11'
 openssl:
 - 1.1.1
 pin_run_as_build:
-  grpc-cpp:
-    max_pin: x.x
   libcurl:
     max_pin: x
   openssl:
