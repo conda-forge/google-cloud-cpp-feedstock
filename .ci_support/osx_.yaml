@@ -15,7 +15,7 @@ cxx_compiler_version:
 google_cloud_cpp_common:
 - 0.25.0
 googleapis_cpp:
-- '0.8'
+- '0.9'
 grpc_cpp:
 - '1.28'
 libcrc32c:
