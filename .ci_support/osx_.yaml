@@ -23,7 +23,7 @@ libcrc32c:
 libcurl:
 - '7'
 libprotobuf:
-- '3.11'
+- '3.12'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
