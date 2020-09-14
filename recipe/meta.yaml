@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: ff82045b9491f0d880fc8e5c83fd9542eafb156dcac9ff8c6209ced66ed2a7f0
+  patches:
+    - 90b2aeb577a4feae69df64503c5da4ca373e689f.patch
 
 build:
   number: 0
