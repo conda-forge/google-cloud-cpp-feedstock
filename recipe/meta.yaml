@@ -1,5 +1,5 @@
 {% set name = "google-cloud-cpp" %}
-{% set version = "1.16.0" %}
+{% set version = "1.17.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: d9d1358f464328b8fd6d24a98d4c2876fde0d3fdb06c8b6bd617be7fb9b0fbac
+  sha256: ff82045b9491f0d880fc8e5c83fd9542eafb156dcac9ff8c6209ced66ed2a7f0
+  patches:
+    - 90b2aeb577a4feae69df64503c5da4ca373e689f.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
@@ -30,6 +32,7 @@ requirements:
     - libcurl
     - libprotobuf
     - openssl
+    - nlohmann_json
   run:
 
 test:
