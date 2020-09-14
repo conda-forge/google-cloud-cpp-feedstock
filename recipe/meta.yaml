@@ -30,6 +30,7 @@ requirements:
     - libcurl
     - libprotobuf
     - openssl
+    - nlohmann_json
   run:
 
 test:
