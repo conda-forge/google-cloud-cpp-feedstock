@@ -5,11 +5,9 @@ Home: https://github.com/googleapis/google-cloud-cpp
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/google-cloud-cpp-feedstock/blob/master/LICENSE.txt)
 
 Summary: Google Cloud Client Library for C++
-
-
 
 Current build status
 ====================
@@ -142,5 +140,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@davidbrochart](https://github.com/davidbrochart/)
 * [@xhochy](https://github.com/xhochy/)
 
