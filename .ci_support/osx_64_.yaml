@@ -12,8 +12,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '10'
-google_cloud_cpp_common:
-- 0.25.0
 googleapis_cpp:
 - '0.10'
 grpc_cpp:
@@ -35,3 +33,6 @@ pin_run_as_build:
     max_pin: x.x.x
 target_platform:
 - osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
