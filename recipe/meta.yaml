@@ -1,5 +1,5 @@
 {% set name = "google-cloud-cpp" %}
-{% set version = "1.20.0" %}
+{% set version = "1.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: b7147de8bf1e5e78181ff61b12181801e4b6c31a7abc8607c6a6f0fa5ac8caf6
+  sha256: 14bf9bf97431b890e0ae5dca8f8904841d4883b8596a7108a42f5700ae58d711
 
 build:
   number: 0
