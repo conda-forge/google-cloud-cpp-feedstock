@@ -15,7 +15,7 @@ cxx_compiler_version:
 googleapis_cpp:
 - '0.10'
 grpc_cpp:
-- '1.33'
+- '1.34'
 libcrc32c:
 - '1.1'
 libcurl:
