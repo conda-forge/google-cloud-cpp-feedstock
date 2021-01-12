@@ -21,6 +21,8 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
+    - grpc-cpp
+    - libprotobuf
   host:
     - c-ares
     - libcrc32c

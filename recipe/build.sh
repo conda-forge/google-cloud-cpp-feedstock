@@ -21,6 +21,7 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
+    -DProtobuf_PROTOC_EXECUTABLE=$BUILD_PREFIX/bin/protoc \
     ..
 
 ninja install
