@@ -7,7 +7,14 @@ pushd build_cmake
 
 export OPENSSL_ROOT_DIR=$PREFIX
 
-cmake -GNinja \
+if [[ "${target_platform}" == osx* ]]; then
+  export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_STANDARD=14"
+else
+  export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_STANDARD=17"
+fi
+
+cmake ${CMAKE_ARGS} \
+    -GNinja \
     -DBUILD_TESTING=OFF \
     -DBUILD_SHARED_LIBS=ON \
     -DOPENSSL_ROOT_DIR=$PREFIX \
