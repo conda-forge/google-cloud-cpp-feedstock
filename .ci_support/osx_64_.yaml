@@ -21,7 +21,7 @@ libcrc32c:
 libcurl:
 - '7'
 libprotobuf:
-- '3.14'
+- '3.15'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 openssl:
