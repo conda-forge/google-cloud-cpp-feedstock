@@ -24,9 +24,8 @@ requirements:
     - grpc-cpp
     - libprotobuf
   host:
-    - c-ares
+    - abseil-cpp
     - libcrc32c
-    - googleapis-cpp
     - grpc-cpp
     - libcurl
     - libprotobuf
@@ -36,14 +35,15 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libstorage_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/storage_client/storage-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/storage/version.h  # [unix]
-    - test -f $PREFIX/lib/libbigtable_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/bigtable_client/bigtable-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [unix]
-    - test -f $PREFIX/lib/libfirestore_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/firestore_client/firestore-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_firestore${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_firestore/google_cloud_cpp_firestore-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/firestore/field_path.h  # [unix]
 
 about:
