@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+abseil_cpp:
+- '20200923.3'
 c_compiler:
 - clang
 c_compiler_version:
@@ -12,8 +14,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '11'
-googleapis_cpp:
-- '0.10'
 grpc_cpp:
 - '1.35'
 libcrc32c:
