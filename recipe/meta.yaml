@@ -1,5 +1,5 @@
 {% set name = "google-cloud-cpp" %}
-{% set version = "1.23.0" %}
+{% set version = "1.24.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 914c9596ee9f271a4ba2de701388009d1f6a7eb0ea269d625aae06be1a51ee9e
+  sha256: 705992bbf5d86a5d5b4276fe249ca495bc0827f1835cb433f3f6be777072aa62
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
@@ -24,9 +24,8 @@ requirements:
     - grpc-cpp
     - libprotobuf
   host:
-    - c-ares
+    - abseil-cpp
     - libcrc32c
-    - googleapis-cpp
     - grpc-cpp
     - libcurl
     - libprotobuf
@@ -36,14 +35,15 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libstorage_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/storage_client/storage-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/storage/version.h  # [unix]
-    - test -f $PREFIX/lib/libbigtable_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/bigtable_client/bigtable-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [unix]
-    - test -f $PREFIX/lib/libfirestore_client${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/firestore_client/firestore-targets.cmake  # [unix]
+    - test -f $PREFIX/lib/libgoogle_cloud_cpp_firestore${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/cmake/google_cloud_cpp_firestore/google_cloud_cpp_firestore-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/firestore/field_path.h  # [unix]
 
 about:
