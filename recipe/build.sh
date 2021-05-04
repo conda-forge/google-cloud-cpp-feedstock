@@ -25,6 +25,7 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DProtobuf_PROTOC_EXECUTABLE=$BUILD_PREFIX/bin/protoc \
+    -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF \
     ..
 
 ninja install
