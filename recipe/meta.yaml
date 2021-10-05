@@ -10,7 +10,7 @@ source:
   sha256: c62338389f76915179fe61d8c0f5fefa06131b4e0d7312707af5309b1394e099
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
