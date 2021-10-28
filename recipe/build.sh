@@ -15,6 +15,7 @@ fi
 
 # Overwrite location of protoc plugin to support cross-compilation
 sed -ie "s;protoc-gen-grpc.*$;protoc-gen-grpc=${BUILD_PREFIX}/bin/grpc_cpp_plugin;g" ../cmake/CompileProtos.cmake
+sed -ie "s;^set(CMAKE_CXX_STANDARD 11);;" ../CMakeLists.txt
 
 cmake ${CMAKE_ARGS} \
     -GNinja \
@@ -31,3 +32,11 @@ cmake ${CMAKE_ARGS} \
 ninja install
 
 popd
+
+echo CMAKE_ARGS=${CMAKE_ARGS}
+
+cmake ${CMAKE_ARGS} \
+    -GNinja \
+    -DCMAKE_PREFIX_PATH=$PREFIX \
+    -S google/cloud/storage/quickstart -B build_cmake_test
+cmake --build build_cmake_test
