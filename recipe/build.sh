@@ -15,6 +15,7 @@ fi
 
 # Overwrite location of protoc plugin to support cross-compilation
 sed -ie "s;protoc-gen-grpc.*$;protoc-gen-grpc=${BUILD_PREFIX}/bin/grpc_cpp_plugin;g" ../cmake/CompileProtos.cmake
+sed -ie "s;^set(CMAKE_CXX_STANDARD 11);;" ../CMakeLists.txt
 
 cmake ${CMAKE_ARGS} \
     -GNinja \

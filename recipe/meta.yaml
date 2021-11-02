@@ -10,7 +10,7 @@ source:
   sha256: b024dfde34efd328001d6446e1416fa008caa40d9020c424a8f8a3711061af35
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
@@ -34,7 +34,17 @@ requirements:
   run:
 
 test:
+  requires:
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - nlohmann_json
+  source_files:
+    - google/cloud/storage/quickstart/*.cc
+    - google/cloud/storage/quickstart/CMakeLists.txt
   commands:
+    - cmake -GNinja -S google/cloud/storage/quickstart -B .build/quickstart -DCMAKE_CXX_STANDARD=17 -DCMAKE_PREFIX_PATH=$PREFIX
+    - cmake --build .build/quickstart
     - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [unix]
     - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [unix]
