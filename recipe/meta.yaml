@@ -42,9 +42,7 @@ test:
     - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [unix]
     - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [unix]
-    - test -f $PREFIX/lib/libgoogle_cloud_cpp_firestore${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/google_cloud_cpp_firestore/google_cloud_cpp_firestore-config.cmake  # [unix]
-    - test -f $PREFIX/include/google/cloud/firestore/field_path.h  # [unix]
+
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
