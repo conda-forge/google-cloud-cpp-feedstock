@@ -32,11 +32,3 @@ cmake ${CMAKE_ARGS} \
 ninja install
 
 popd
-
-echo CMAKE_ARGS=${CMAKE_ARGS}
-
-cmake ${CMAKE_ARGS} \
-    -GNinja \
-    -DCMAKE_PREFIX_PATH=$PREFIX \
-    -S google/cloud/storage/quickstart -B build_cmake_test
-cmake --build build_cmake_test
