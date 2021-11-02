@@ -10,7 +10,7 @@ source:
   sha256: 5bea1711c274dc7a815ecf67a0d80ea057a0435553443e3f996ffbaae1071b6f
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
@@ -32,13 +32,13 @@ requirements:
     - openssl
     - nlohmann_json
   run:
+    - nlohmann_json
 
 test:
   requires:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-    - nlohmann_json
   source_files:
     - google/cloud/storage/quickstart/*.cc
     - google/cloud/storage/quickstart/CMakeLists.txt
