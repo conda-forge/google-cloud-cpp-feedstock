@@ -1,0 +1,36 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
+abseil_cpp:
+- '20210324.2'
+c_compiler:
+- clang
+c_compiler_version:
+- '11'
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '11'
+grpc_cpp:
+- '1.40'
+libcrc32c:
+- '1.1'
+libcurl:
+- '7'
+libprotobuf:
+- '3.18'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+openssl:
+- '3'
+pin_run_as_build:
+  libcurl:
+    max_pin: x
+target_platform:
+- osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
