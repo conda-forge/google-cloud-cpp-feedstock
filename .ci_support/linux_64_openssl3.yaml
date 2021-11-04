@@ -1,0 +1,38 @@
+abseil_cpp:
+- '20210324.2'
+c_compiler:
+- gcc
+c_compiler_version:
+- '9'
+cdt_name:
+- cos6
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- gxx
+cxx_compiler_version:
+- '9'
+docker_image:
+- quay.io/condaforge/linux-anvil-comp7
+grpc_cpp:
+- '1.40'
+libcrc32c:
+- '1.1'
+libcurl:
+- '7'
+libprotobuf:
+- '3.18'
+openssl:
+- '3'
+pin_run_as_build:
+  libcurl:
+    max_pin: x
+target_platform:
+- linux-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+- - cdt_name
+  - docker_image
