@@ -24,7 +24,6 @@ requirements:
     - ninja
     - grpc-cpp
     - libprotobuf
-    - git
   host:
     - abseil-cpp
     - libcrc32c
