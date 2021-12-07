@@ -10,5 +10,7 @@ cmake -GNinja ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
     -DCMAKE_MODULE_PATH="%LIBRARY_PREFIX%/lib/cmake"
+if NOT ERRORLEVEL 0 exit /b 1
 
 cmake --build .build/quickstart --config Release
+if NOT ERRORLEVEL 0 exit /b 1
