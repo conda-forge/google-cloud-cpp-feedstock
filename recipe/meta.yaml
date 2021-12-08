@@ -8,10 +8,11 @@ package:
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: f38ae4ab6f2ed7579a7ceb5d0b32ed04097da07bc898907ed01c8d840c2bdbce
+  patches:
+    - 0001-fix-storage-dep-windows.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   run_exports:
     - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
 
@@ -42,16 +43,6 @@ test:
   source_files:
     - google/cloud/storage/quickstart/*.cc
     - google/cloud/storage/quickstart/CMakeLists.txt
-  commands:
-    - cmake -GNinja -S google/cloud/storage/quickstart -B .build/quickstart -DCMAKE_CXX_STANDARD=17 -DCMAKE_PREFIX_PATH=$PREFIX
-    - cmake --build .build/quickstart
-    - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [unix]
-    - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [unix]
-    - test -f $PREFIX/include/google/cloud/storage/version.h  # [unix]
-    - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [unix]
-    - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [unix]
 
 
 about:
@@ -63,5 +54,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - xhochy
+    - coryan
     - davidbrochart
+    - xhochy
