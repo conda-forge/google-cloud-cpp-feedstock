@@ -184,6 +184,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@coryan](https://github.com/coryan/)
 * [@davidbrochart](https://github.com/davidbrochart/)
 * [@xhochy](https://github.com/xhochy/)
 
