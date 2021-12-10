@@ -15,7 +15,7 @@ libcrc32c:
 libcurl:
 - '7'
 libprotobuf:
-- '3.18'
+- '3.19'
 openssl:
 - '3'
 pin_run_as_build:
