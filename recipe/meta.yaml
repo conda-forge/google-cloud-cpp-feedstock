@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: e4e9eac1e7999eff195db270bc2a719004660b3730ebb5d2f444f2d2057e49b2
-  patches:
-    - 0001-fix-storage-dep-windows.patch
 
 build:
   number: 0
