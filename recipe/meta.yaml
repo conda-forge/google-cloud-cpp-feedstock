@@ -95,8 +95,8 @@ outputs:
       run:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - nlohmann_json
-    tests:
-      command:
+    test:
+      commands:
         - ./run_test_google_cloud_cpp.sh  # [not win]
         - ./run_test_google_cloud_cpp.bat  # [win]
         - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
@@ -117,9 +117,6 @@ outputs:
       source_files:
         - google/cloud/storage/quickstart/*.cc
         - google/cloud/storage/quickstart/CMakeLists.txt
-tests:
-  commands:
-    - exit 0
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
