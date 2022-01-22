@@ -2,12 +2,8 @@
 
 set -euo pipefail
 
-pushd build_cmake
-
-ninja install
 if [[ "$PKG_NAME" == "libgoogle-cloud" ]]; then
-  rm -r ${PREFIX}/lib/cmake/google_cloud_cpp*
-  rm -r ${PREFIX}/include/google
+  cmake --install build_cmake --component google_cloud_cpp_runtime
+else
+  cmake --install build_cmake --component google_cloud_cpp_development
 fi
-
-popd

@@ -55,11 +55,13 @@ outputs:
         - google-cloud-cpp {{ version }} *_{{ PKG_BUILDNUM }}
     test:
       commands:
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage{{ SHLIB_EXT }}  # [not win]
-        - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [not win]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.{{ version }}.dylib  # [osx]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.so.{{ version }}  # [linux]
+        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [not win]
         - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
         - test ! -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable{{ SHLIB_EXT }}  # [not win]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.{{ version }}.dylib  # [osx]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.so.{{ version }}  # [linux]
         - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
         - test ! -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
         - if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_storage.dll exit 1  # [win]

@@ -6,12 +6,10 @@ set LIBRARY_PREFIX="%LIBRARY_PREFIX:\=/%"
 set BUILD_PREFIX="%BUILD_PREFIX:\=/%"
 set SRC_DIR="%SRC_DIR:\=/%"
 
-cmake --build "%SRC_DIR%/build_cmake" --target install --config Release
-if NOT ERRORLEVEL 0 exit /b 1
-
 if [%PKG_NAME%] == [libgoogle-cloud] (
-  del %LIBRARY_PREFIX%\lib\cmake\google_cloud_cpp*
+  cmake --install build_cmake --component google_cloud_cpp_runtime
   if NOT ERRORLEVEL 0 exit /b 1
-  del %LIBRARY_PREFIX%\include\google
+) else (
+  cmake --install build_cmake --component google_cloud_cpp_development
   if NOT ERRORLEVEL 0 exit /b 1
 )
