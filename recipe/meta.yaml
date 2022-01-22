@@ -117,6 +117,9 @@ outputs:
       source_files:
         - google/cloud/storage/quickstart/*.cc
         - google/cloud/storage/quickstart/CMakeLists.txt
+tests:
+  commands:
+    - exit 0
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
