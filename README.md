@@ -96,6 +96,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-google--cloud--cpp-green.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libgoogle--cloud-green.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) |
 
 Installing google-cloud-cpp
 ===========================
@@ -107,10 +108,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `google-cloud-cpp` can be installed with:
+Once the `conda-forge` channel has been enabled, `google-cloud-cpp, libgoogle-cloud` can be installed with:
 
 ```
-conda install google-cloud-cpp
+conda install google-cloud-cpp libgoogle-cloud
 ```
 
 It is possible to list all of the versions of `google-cloud-cpp` available on your platform with:
