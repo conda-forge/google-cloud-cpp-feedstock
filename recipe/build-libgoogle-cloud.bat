@@ -12,6 +12,6 @@ if NOT ERRORLEVEL 0 exit /b 1
 if [%PKG_NAME%] == [libgoogle-cloud] (
   del %LIBRARY_PREFIX%\lib\cmake\google_cloud_cpp*
   if NOT ERRORLEVEL 0 exit /b 1
-  del %LIBRARY_PREFIX%\include\google\cloud
+  del %LIBRARY_PREFIX%\include\google
   if NOT ERRORLEVEL 0 exit /b 1
 )
