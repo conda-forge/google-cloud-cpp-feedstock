@@ -64,11 +64,12 @@ outputs:
         - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.so.{{ version }}  # [linux]
         - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
         - test ! -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
-        - if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_storage.dll exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\lib\\pkgconfig\\google_cloud_cpp_storage.pc exit 1  # [win]
+        # Currently, the windows build is static.
+        #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_storage.dll exit 1  # [win]
+        #- if not exist %LIBRARY_PREFIX%\\lib\\pkgconfig\\google_cloud_cpp_storage.pc exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
+        #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
   - name: google-cloud-cpp
