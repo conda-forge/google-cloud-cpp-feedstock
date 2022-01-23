@@ -19,5 +19,5 @@ cmake -G "Ninja" ^
     -S "%SRC_DIR%" -B "%SRC_DIR%/build_cmake"
 if NOT ERRORLEVEL 0 exit /b 1
 
-cmake --build "%SRC_DIR%/build_cmake" --target install --config Release
+cmake --build "%SRC_DIR%/build_cmake" --config Release
 if NOT ERRORLEVEL 0 exit /b 1

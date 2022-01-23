@@ -2,7 +2,7 @@
 {% set version = "1.35.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
@@ -10,10 +10,7 @@ source:
   sha256: e4e9eac1e7999eff195db270bc2a719004660b3730ebb5d2f444f2d2057e49b2
 
 build:
-  number: 0
-  run_exports:
-    - {{ pin_subpackage("google-cloud-cpp", max_pin="x.x") }}
-
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
@@ -30,18 +27,99 @@ requirements:
     - libprotobuf
     - openssl
     - nlohmann_json
-  run:
 
-test:
-  requires:
-    - {{ compiler('cxx') }}
-    - cmake
-    - ninja
-    - nlohmann_json
-  source_files:
-    - google/cloud/storage/quickstart/*.cc
-    - google/cloud/storage/quickstart/CMakeLists.txt
-
+outputs:
+  - name: libgoogle-cloud
+    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+        - grpc-cpp
+        - libprotobuf
+      host:
+        - abseil-cpp
+        - libcrc32c
+        - grpc-cpp
+        - libcurl
+        - libprotobuf
+        - openssl
+        - nlohmann_json
+      run_constrained:
+        - google-cloud-cpp {{ version }} *_{{ PKG_BUILDNUM }}
+    test:
+      commands:
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.{{ version }}.dylib  # [osx]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.so.{{ version }}  # [linux]
+        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [not win]
+        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
+        - test ! -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.{{ version }}.dylib  # [osx]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.so.{{ version }}  # [linux]
+        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
+        - test ! -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
+        # Currently, the windows build is static.
+        #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_storage.dll exit 1  # [win]
+        #- if not exist %LIBRARY_PREFIX%\\lib\\pkgconfig\\google_cloud_cpp_storage.pc exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
+        #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
+  - name: google-cloud-cpp
+    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+        - grpc-cpp
+        - libprotobuf
+      host:
+        - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
+        - abseil-cpp
+        - libcrc32c
+        - grpc-cpp
+        - libcurl
+        - libprotobuf
+        - openssl
+        - nlohmann_json
+      run:
+        - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
+        - nlohmann_json
+    test:
+      commands:
+        - ./run_test_google_cloud_cpp.sh  # [not win]
+        - ./run_test_google_cloud_cpp.bat  # [win]
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
+        - test -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
+        - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
+      requires:
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+      files:
+        - run_test_google_cloud_cpp.sh
+        - run_test_google_cloud_cpp.bat
+      source_files:
+        - google/cloud/storage/quickstart/*.cc
+        - google/cloud/storage/quickstart/CMakeLists.txt
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
@@ -51,6 +129,7 @@ about:
   summary: Google Cloud Client Library for C++
 
 extra:
+  feedstock-name: google-cloud-cpp
   recipe-maintainers:
     - coryan
     - davidbrochart

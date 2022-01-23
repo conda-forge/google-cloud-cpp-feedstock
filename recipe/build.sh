@@ -29,6 +29,5 @@ cmake ${CMAKE_ARGS} \
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF \
     ..
 
-ninja install
-
+ninja
 popd
