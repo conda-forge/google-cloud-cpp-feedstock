@@ -10,7 +10,7 @@ source:
   sha256: a7e51bfffb95a377094b2ae7e3b9f715a68ed931c48992c7273b2fae989c029c
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
