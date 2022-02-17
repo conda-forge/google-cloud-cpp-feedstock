@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2017
 grpc_cpp:
-- '1.43'
+- '1.44'
 libcrc32c:
 - '1.1'
 libcurl:
