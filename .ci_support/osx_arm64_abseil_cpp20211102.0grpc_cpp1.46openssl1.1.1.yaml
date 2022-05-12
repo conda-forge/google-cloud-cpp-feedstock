@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '13'
 grpc_cpp:
-- '1.45'
+- '1.46'
 libcrc32c:
 - '1.1'
 libcurl:
@@ -32,5 +32,7 @@ pin_run_as_build:
 target_platform:
 - osx-arm64
 zip_keys:
+- - abseil_cpp
+  - grpc_cpp
 - - c_compiler_version
   - cxx_compiler_version

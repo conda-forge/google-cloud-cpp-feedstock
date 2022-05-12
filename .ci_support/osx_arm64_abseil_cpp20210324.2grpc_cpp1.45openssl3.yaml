@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 abseil_cpp:
-- '20211102.0'
+- '20210324.2'
 c_compiler:
 - clang
 c_compiler_version:
@@ -32,5 +32,7 @@ pin_run_as_build:
 target_platform:
 - osx-arm64
 zip_keys:
+- - abseil_cpp
+  - grpc_cpp
 - - c_compiler_version
   - cxx_compiler_version
