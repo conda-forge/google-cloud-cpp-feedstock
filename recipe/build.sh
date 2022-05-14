@@ -6,8 +6,11 @@ mkdir build_cmake
 pushd build_cmake
 
 export OPENSSL_ROOT_DIR=$PREFIX
-
-export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_STANDARD=17"
+if [[ "${target_platform}" == osx* ]] && [[ "${abseil_cpp}" == "20210324.2" ]]; then
+  export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_STANDARD=14"
+else
+  export CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_STANDARD=17"
+fi
 
 # Overwrite location of protoc plugin to support cross-compilation
 sed -ie "s;protoc-gen-grpc.*$;protoc-gen-grpc=${BUILD_PREFIX}/bin/grpc_cpp_plugin;g" ../cmake/CompileProtos.cmake
