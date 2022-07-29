@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '13'
 grpc_cpp:
-- '1.45'
+- '1.47'
 libcrc32c:
 - '1.1'
 libcurl:
