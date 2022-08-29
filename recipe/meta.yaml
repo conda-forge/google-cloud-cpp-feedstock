@@ -20,7 +20,7 @@ requirements:
     - grpc-cpp
     - libprotobuf
   host:
-    - abseil-cpp
+    - libabseil
     - libcrc32c
     - grpc-cpp
     - libcurl
@@ -44,7 +44,7 @@ outputs:
         - grpc-cpp
         - libprotobuf
       host:
-        - abseil-cpp
+        - libabseil
         - libcrc32c
         - grpc-cpp
         - libcurl
@@ -88,7 +88,7 @@ outputs:
         - libprotobuf
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
-        - abseil-cpp
+        - libabseil
         - libcrc32c
         - grpc-cpp
         - libcurl
