@@ -27,6 +27,7 @@ requirements:
     - libprotobuf
     - openssl
     - nlohmann_json
+    - zlib
 
 outputs:
   - name: libgoogle-cloud
@@ -98,6 +99,9 @@ outputs:
       run:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - nlohmann_json
+        # cannot load package without zlib because it's specified
+        # as required; if possible, this should be removed upstream
+        - zlib
     test:
       commands:
         - ./run_test_google_cloud_cpp.sh  # [not win]
