@@ -18,6 +18,8 @@ source:
     - patches/0001-disable-libraries.patch  # [libprotobuf == "3.21"]
     # backport https://github.com/googleapis/google-cloud-cpp/pull/11782
     - patches/0002-fix-better-support-for-cross-compilation-11782.patch
+    # don't try to build the protobuf-heavy googleapis as shared on win
+    - patches/0003-do-not-try-to-build-external-googleapis-as-shared.patch  # [win]
 
 build:
   number: 1

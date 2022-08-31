@@ -1,7 +1,7 @@
 From ddfa37bdafcf5ae551157676f5086518f720417d Mon Sep 17 00:00:00 2001
 From: Carlos O'Ryan <coryan@google.com>
 Date: Tue, 6 Jun 2023 11:30:17 -0400
-Subject: [PATCH 2/2] fix: better support for cross-compilation (#11782)
+Subject: [PATCH 2/3] fix: better support for cross-compilation (#11782)
 
 Allow overrides for the `protobuf::protoc` and `gRPC::grpc_cpp_plugin`
 targets. On cross-compilation builds the targets point to the binaries
