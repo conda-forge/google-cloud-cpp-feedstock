@@ -1,13 +1,13 @@
 abseil_cpp:
 - '20210324.2'
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
 grpc_cpp:
 - '1.45'
 libcrc32c:
