@@ -27,171 +27,171 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>linux_64_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_abseil_cpp20211102.0openssl3</td>
+              <td>linux_64_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>linux_64_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_abseil_cpp20220623.0openssl3</td>
+              <td>linux_64_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_64_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>linux_aarch64_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_abseil_cpp20211102.0openssl3</td>
+              <td>linux_aarch64_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>linux_aarch64_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_abseil_cpp20220623.0openssl3</td>
+              <td>linux_aarch64_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>linux_ppc64le_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_abseil_cpp20211102.0openssl3</td>
+              <td>linux_ppc64le_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>linux_ppc64le_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_abseil_cpp20220623.0openssl3</td>
+              <td>linux_ppc64le_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>osx_64_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_abseil_cpp20211102.0openssl3</td>
+              <td>osx_64_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>osx_64_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_abseil_cpp20220623.0openssl3</td>
+              <td>osx_64_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_64_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>osx_arm64_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_abseil_cpp20211102.0openssl3</td>
+              <td>osx_arm64_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>osx_arm64_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_abseil_cpp20220623.0openssl3</td>
+              <td>osx_arm64_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_abseil_cpp20211102.0openssl1.1.1</td>
+              <td>win_64_grpc_cpp1.46openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_abseil_cpp20211102.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_grpc_cpp1.46openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_abseil_cpp20211102.0openssl3</td>
+              <td>win_64_grpc_cpp1.46openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_abseil_cpp20211102.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_grpc_cpp1.46openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_abseil_cpp20220623.0openssl1.1.1</td>
+              <td>win_64_grpc_cpp1.47openssl1.1.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_abseil_cpp20220623.0openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_grpc_cpp1.47openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_abseil_cpp20220623.0openssl3</td>
+              <td>win_64_grpc_cpp1.47openssl3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9354&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_abseil_cpp20220623.0openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/google-cloud-cpp-feedstock?branchName=main&jobName=win&configuration=win_64_grpc_cpp1.47openssl3" alt="variant">
                 </a>
               </td>
             </tr>
@@ -326,5 +326,6 @@ Feedstock Maintainers
 
 * [@coryan](https://github.com/coryan/)
 * [@davidbrochart](https://github.com/davidbrochart/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@xhochy](https://github.com/xhochy/)
 

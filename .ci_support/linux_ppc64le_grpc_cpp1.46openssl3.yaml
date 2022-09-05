@@ -1,13 +1,7 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
-abseil_cpp:
-- '20211102.0'
 c_compiler:
 - gcc
 c_compiler_version:
 - '10'
-cdt_arch:
-- aarch64
 cdt_name:
 - cos7
 channel_sources:
@@ -22,6 +16,8 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 grpc_cpp:
 - '1.46'
+libabseil:
+- '20220623.0'
 libcrc32c:
 - '1.1'
 libcurl:
@@ -33,10 +29,12 @@ openssl:
 pin_run_as_build:
   libcurl:
     max_pin: x
+  zlib:
+    max_pin: x.x
 target_platform:
-- linux-aarch64
+- linux-ppc64le
 zip_keys:
-- - abseil_cpp
-  - grpc_cpp
 - - c_compiler_version
   - cxx_compiler_version
+zlib:
+- '1.2'
