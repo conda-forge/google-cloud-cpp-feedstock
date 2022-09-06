@@ -10,7 +10,7 @@ source:
   sha256: 168c38219feb5a2c6b81bec5960cd067f6cda3daa83cd9761fa04f27d2b78f17
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
@@ -20,13 +20,14 @@ requirements:
     - grpc-cpp
     - libprotobuf
   host:
-    - abseil-cpp
+    - libabseil
     - libcrc32c
     - grpc-cpp
     - libcurl
     - libprotobuf
     - openssl
     - nlohmann_json
+    - zlib
 
 outputs:
   - name: libgoogle-cloud
@@ -44,7 +45,7 @@ outputs:
         - grpc-cpp
         - libprotobuf
       host:
-        - abseil-cpp
+        - libabseil
         - libcrc32c
         - grpc-cpp
         - libcurl
@@ -88,7 +89,7 @@ outputs:
         - libprotobuf
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
-        - abseil-cpp
+        - libabseil
         - libcrc32c
         - grpc-cpp
         - libcurl
@@ -98,6 +99,9 @@ outputs:
       run:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - nlohmann_json
+        # cannot load package without zlib because it's specified
+        # as required; if possible, this should be removed upstream
+        - zlib
     test:
       commands:
         - ./run_test_google_cloud_cpp.sh  # [not win]
@@ -134,3 +138,4 @@ extra:
     - coryan
     - davidbrochart
     - xhochy
+    - h-vetinari

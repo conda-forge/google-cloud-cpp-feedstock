@@ -1,15 +1,15 @@
-abseil_cpp:
-- '20210324.2'
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
 grpc_cpp:
-- '1.45'
+- '1.46'
+libabseil:
+- '20220623.0'
 libcrc32c:
 - '1.1'
 libcurl:
@@ -17,12 +17,13 @@ libcurl:
 libprotobuf:
 - '3.20'
 openssl:
-- '3'
+- 1.1.1
 pin_run_as_build:
   libcurl:
     max_pin: x
+  zlib:
+    max_pin: x.x
 target_platform:
 - win-64
-zip_keys:
-- - abseil_cpp
-  - grpc_cpp
+zlib:
+- '1.2'
