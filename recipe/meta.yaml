@@ -10,7 +10,7 @@ source:
   sha256: e8d904bbff788a26aa9cd67d6c0725f9798448fcf73ab809ec2d7b80f89a1dc5
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
@@ -35,7 +35,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -78,7 +78,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
