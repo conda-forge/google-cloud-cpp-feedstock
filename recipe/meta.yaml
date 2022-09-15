@@ -35,7 +35,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -78,7 +78,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
