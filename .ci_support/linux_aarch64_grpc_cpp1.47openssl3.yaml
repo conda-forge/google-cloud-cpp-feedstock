@@ -30,11 +30,6 @@ libprotobuf:
 - '3.21'
 openssl:
 - '3'
-pin_run_as_build:
-  libcurl:
-    max_pin: x
-  zlib:
-    max_pin: x.x
 target_platform:
 - linux-aarch64
 zip_keys:
