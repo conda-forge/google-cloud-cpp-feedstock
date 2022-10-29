@@ -6,14 +6,14 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2019
-grpc_cpp:
-- '1.46'
 libabseil:
 - '20220623.0'
 libcrc32c:
 - '1.1'
 libcurl:
 - '7'
+libgrpc:
+- '1.49'
 libprotobuf:
 - '3.21'
 openssl:
