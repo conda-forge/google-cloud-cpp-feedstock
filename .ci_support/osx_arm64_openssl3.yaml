@@ -12,20 +12,20 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '14'
-grpc_cpp:
-- '1.47'
 libabseil:
 - '20220623.0'
 libcrc32c:
 - '1.1'
 libcurl:
 - '7'
+libgrpc:
+- '1.49'
 libprotobuf:
 - '3.21'
 macos_machine:
 - arm64-apple-darwin20.0.0
 openssl:
-- 1.1.1
+- '3'
 target_platform:
 - osx-arm64
 zip_keys:

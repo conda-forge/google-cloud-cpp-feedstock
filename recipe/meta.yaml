@@ -10,20 +10,20 @@ source:
   sha256: d2c764831c63529449d9d61c0403b97555d6c6cbeaab1809bc51c51ac5c7e0f3
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-    - grpc-cpp
+    - libgrpc
     - libprotobuf
   host:
     - libabseil
     - libcrc32c
-    - grpc-cpp
     - libcurl
+    - libgrpc
     - libprotobuf
     - openssl
     - nlohmann_json
@@ -42,13 +42,13 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - grpc-cpp
+        - libgrpc
         - libprotobuf
       host:
         - libabseil
         - libcrc32c
-        - grpc-cpp
         - libcurl
+        - libgrpc
         - libprotobuf
         - openssl
         - nlohmann_json
@@ -85,14 +85,14 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - grpc-cpp
+        - libgrpc
         - libprotobuf
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - libabseil
         - libcrc32c
-        - grpc-cpp
         - libcurl
+        - libgrpc
         - libprotobuf
         - openssl
         - nlohmann_json
