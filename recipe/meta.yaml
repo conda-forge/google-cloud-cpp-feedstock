@@ -17,13 +17,13 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
-    - grpc-cpp
+    - libgrpc
     - libprotobuf
   host:
     - libabseil
     - libcrc32c
-    - grpc-cpp
     - libcurl
+    - libgrpc
     - libprotobuf
     - openssl
     - nlohmann_json
@@ -42,13 +42,13 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - grpc-cpp
+        - libgrpc
         - libprotobuf
       host:
         - libabseil
         - libcrc32c
-        - grpc-cpp
         - libcurl
+        - libgrpc
         - libprotobuf
         - openssl
         - nlohmann_json
@@ -85,14 +85,14 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - grpc-cpp
+        - libgrpc
         - libprotobuf
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - libabseil
         - libcrc32c
-        - grpc-cpp
         - libcurl
+        - libgrpc
         - libprotobuf
         - openssl
         - nlohmann_json
