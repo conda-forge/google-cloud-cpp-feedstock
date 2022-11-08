@@ -43,7 +43,7 @@ requirements:
 
 outputs:
   - name: libgoogle-cloud
-    script: build-libgoogle-cloud.sh  # [unix]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -68,25 +68,25 @@ outputs:
         - google-cloud-cpp {{ version }} *_{{ PKG_BUILDNUM }}
     test:
       commands:
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.{{ version }}.dylib  # [osx]
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_storage.so.{{ version }}  # [linux]
-        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_storage.pc  # [not win]
-        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
-        - test ! -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.{{ version }}.dylib  # [osx]
-        - test -f $PREFIX/lib/libgoogle_cloud_cpp_bigtable.so.{{ version }}  # [linux]
-        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
-        - test ! -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
-        - if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_storage.dll exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\lib\\pkgconfig\\google_cloud_cpp_storage.pc exit 1  # [win]
-        - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
-        - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
-        - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
-        - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
+      {% for component in ["bigtable", "storage"] %}
+        # shared libs
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_{{ component }}.so.{{ version }}       # [linux]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_{{ component }}.{{ version }}.dylib    # [osx]
+        - if not exist %LIBRARY_BIN%\\libgoogle_cloud_cpp_{{ component }}.dll exit 1     # [win]
+        - if not exist %LIBRARY_LIB%\\libgoogle_cloud_cpp_{{ component }}.lib exit 1     # [win]
+        # absence of headers
+        - test ! -f $PREFIX/include/google/cloud/{{ component }}/version.h               # [unix]
+        - if exist %LIBRARY_INC%\\google\\cloud\\{{ component }}\\version.h exit 1       # [win]
+        # absence of metadata (pkgconfig)
+        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_{{ component }}.pc            # [unix]
+        - if exist %LIBRARY_LIB%\\pkgconfig\\google_cloud_cpp_{{ component }}.pc exit 1  # [win]
+        # absence of metadata (CMake)
+        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_{{ component }}/google_cloud_cpp_{{ component }}-config.cmake             # [unix]
+        - if exist %LIBRARY_LIB%\\cmake\\google_cloud_cpp_{{ component }}\\google_cloud_cpp_{{ component }}-config.cmake exit 1  # [win]
+      {% endfor %}
 
   - name: google-cloud-cpp
-    script: build-libgoogle-cloud.sh  # [unix]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -115,17 +115,6 @@ outputs:
         # as required; if possible, this should be removed upstream
         - zlib
     test:
-      commands:
-        - ./run_test_google_cloud_cpp.sh   # [unix]
-        - ./run_test_google_cloud_cpp.bat  # [win]
-        - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
-        - test -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
-        - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
-        - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
-        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
       requires:
         - {{ compiler('cxx') }}
         - cmake
@@ -136,6 +125,20 @@ outputs:
       source_files:
         - google/cloud/storage/quickstart/*.cc
         - google/cloud/storage/quickstart/CMakeLists.txt
+      commands:
+        - ./run_test_google_cloud_cpp.sh   # [unix]
+        - ./run_test_google_cloud_cpp.bat  # [win]
+      {% for component in ["bigtable", "storage"] %}
+        # headers
+        - test -f $PREFIX/include/google/cloud/{{ component }}/version.h                     # [unix]
+        - if not exist %LIBRARY_INC%\\google\\cloud\\{{ component }}\\version.h exit 1       # [win]
+        # pkgconfig
+        - test -f $PREFIX/lib/pkgconfig/google_cloud_cpp_{{ component }}.pc                  # [unix]
+        - if not exist %LIBRARY_LIB%\\pkgconfig\\google_cloud_cpp_{{ component }}.pc exit 1  # [win]
+        # CMake
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_{{ component }}/google_cloud_cpp_{{ component }}-config.cmake                   # [unix]
+        - if not exist %LIBRARY_LIB%\\cmake\\google_cloud_cpp_{{ component }}\\google_cloud_cpp_{{ component }}-config.cmake exit 1  # [win]
+      {% endfor %}
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
