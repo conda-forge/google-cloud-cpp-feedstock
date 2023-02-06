@@ -16,7 +16,7 @@ source:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8125
     #   https://github.com/googleapis/google-cloud-cpp/issues/8145
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
-    - '0001-disable-channel-library.patch'
+    - '0001-disable-libraries.patch'
 
 build:
   number: 1
