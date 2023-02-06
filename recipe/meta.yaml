@@ -48,7 +48,6 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - ninja
-        - patch
         - libgrpc
         - libprotobuf
       host:
