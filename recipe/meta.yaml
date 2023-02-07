@@ -8,9 +8,18 @@ package:
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 23b8ad92efed546139550853bd1ead2b9dbd93320c8e793c29fcb3858a0c2f6c
+  patches:
+    # Several libraries do not compile under Conda.  Depending on the platform
+    # and compiler, they need a newer version of Protobuf.  That is, they
+    # compile with older versions of Protobuf on some combinations of platform,
+    # combpiler, and C++ standard library. For more information, see:
+    #   https://github.com/googleapis/google-cloud-cpp/issues/8125
+    #   https://github.com/googleapis/google-cloud-cpp/issues/8145
+    #   https://github.com/googleapis/google-cloud-cpp/issues/8785
+    - '0001-disable-libraries.patch'
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
