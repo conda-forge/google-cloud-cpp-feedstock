@@ -7,6 +7,11 @@ export OPENSSL_ROOT_DIR=$PREFIX
 # Overwrite location of protoc plugin to support cross-compilation
 sed -ie "s;protoc-gen-grpc.*$;protoc-gen-grpc=${BUILD_PREFIX}/bin/grpc_cpp_plugin;g" cmake/CompileProtos.cmake
 
+if [[ "${target_platform}" == osx-* ]]; then
+  # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+  CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
+
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake \
     -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__ \
