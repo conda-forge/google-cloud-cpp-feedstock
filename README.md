@@ -1,11 +1,11 @@
-About google-cloud-cpp
-======================
+About google-cloud-cpp-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/google-cloud-cpp-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/googleapis/google-cloud-cpp
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/google-cloud-cpp-feedstock/blob/main/LICENSE.txt)
 
 Summary: Google Cloud Client Library for C++
 
