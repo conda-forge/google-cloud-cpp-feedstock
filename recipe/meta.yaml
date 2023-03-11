@@ -19,7 +19,7 @@ source:
     - 0001-disable-libraries.patch
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}

@@ -19,7 +19,7 @@ libcrc32c:
 libcurl:
 - '7'
 libgrpc:
-- '1.51'
+- '1.52'
 libprotobuf:
 - '3.21'
 macos_machine:
