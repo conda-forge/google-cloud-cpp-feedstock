@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '14'
+- '15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,13 +11,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '14'
+- '15'
 libabseil:
 - '20230125'
 libcrc32c:
 - '1.1'
 libcurl:
-- '7'
+- '8'
 libgrpc:
 - '1.52'
 libprotobuf:
