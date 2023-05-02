@@ -1,5 +1,5 @@
 {% set name = "google-cloud-cpp" %}
-{% set version = "2.9.1" %}
+{% set version = "2.10.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e63d49799eadca7f27c1d7192668ee7cc7fa7dad478c03868d1ce54d662d6ea9
+  sha256: c4aed782cf1241682fc21f143ea81c77438bffcb60b9374f48fc066b1b2fdb4f
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
     # and compiler, they need a newer version of Protobuf.  That is, they
