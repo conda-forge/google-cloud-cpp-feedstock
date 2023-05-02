@@ -39,7 +39,7 @@ requirements:
 
 outputs:
   - name: libgoogle-cloud
-    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -81,8 +81,9 @@ outputs:
         #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
+
   - name: google-cloud-cpp
-    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -112,7 +113,7 @@ outputs:
         - zlib
     test:
       commands:
-        - ./run_test_google_cloud_cpp.sh  # [not win]
+        - ./run_test_google_cloud_cpp.sh   # [unix]
         - ./run_test_google_cloud_cpp.bat  # [win]
         - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
         - test -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
