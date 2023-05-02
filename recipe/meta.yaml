@@ -1,13 +1,12 @@
-{% set name = "google-cloud-cpp" %}
-{% set version = "2.9.1" %}
+{% set version = "2.10.0" %}
 
 package:
-  name: {{ name|lower }}-split
+  name: google-cloud-cpp-split
   version: {{ version }}
 
 source:
-  url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e63d49799eadca7f27c1d7192668ee7cc7fa7dad478c03868d1ce54d662d6ea9
+  url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
+  sha256: c4aed782cf1241682fc21f143ea81c77438bffcb60b9374f48fc066b1b2fdb4f
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
     # and compiler, they need a newer version of Protobuf.  That is, they
@@ -16,7 +15,7 @@ source:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8125
     #   https://github.com/googleapis/google-cloud-cpp/issues/8145
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
-    - 0001-disable-libraries.patch
+    - patches/0001-disable-libraries.patch
 
 build:
   number: 0
@@ -40,7 +39,7 @@ requirements:
 
 outputs:
   - name: libgoogle-cloud
-    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -82,8 +81,9 @@ outputs:
         #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_bigtable.dll exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
         - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
+
   - name: google-cloud-cpp
-    script: build-libgoogle-cloud.sh  # [not win]
+    script: build-libgoogle-cloud.sh   # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -113,7 +113,7 @@ outputs:
         - zlib
     test:
       commands:
-        - ./run_test_google_cloud_cpp.sh  # [not win]
+        - ./run_test_google_cloud_cpp.sh   # [unix]
         - ./run_test_google_cloud_cpp.bat  # [win]
         - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
         - test -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
