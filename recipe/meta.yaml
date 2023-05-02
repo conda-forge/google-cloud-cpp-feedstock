@@ -1,12 +1,11 @@
-{% set name = "google-cloud-cpp" %}
 {% set version = "2.10.0" %}
 
 package:
-  name: {{ name|lower }}-split
+  name: google-cloud-cpp-split
   version: {{ version }}
 
 source:
-  url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
   sha256: c4aed782cf1241682fc21f143ea81c77438bffcb60b9374f48fc066b1b2fdb4f
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
