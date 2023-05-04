@@ -1,4 +1,4 @@
-{% set version = "2.10.0" %}
+{% set version = "2.10.1" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: c4aed782cf1241682fc21f143ea81c77438bffcb60b9374f48fc066b1b2fdb4f
+  sha256: dbd8ff9cdda8b991049094c41d9125438098422658c77dc1afab524c589efeda
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
     # and compiler, they need a newer version of Protobuf.  That is, they
@@ -39,7 +39,7 @@ requirements:
 
 outputs:
   - name: libgoogle-cloud
-    script: build-libgoogle-cloud.sh   # [unix]
+    script: build-libgoogle-cloud.sh  # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
@@ -83,7 +83,7 @@ outputs:
         - if exist %LIBRARY_PREFIX%\\include\\google\\cloud\\bigtable\\version.h exit 1  # [win]
 
   - name: google-cloud-cpp
-    script: build-libgoogle-cloud.sh   # [unix]
+    script: build-libgoogle-cloud.sh  # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
