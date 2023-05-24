@@ -19,9 +19,9 @@ libcrc32c:
 libcurl:
 - '8'
 libgrpc:
-- '1.54'
+- '1.55'
 libprotobuf:
-- '3.21'
+- '4.23'
 macos_machine:
 - arm64-apple-darwin20.0.0
 openssl:
@@ -31,5 +31,7 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - libgrpc
+  - libprotobuf
 zlib:
 - '1.2'
