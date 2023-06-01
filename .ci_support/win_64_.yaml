@@ -20,5 +20,8 @@ openssl:
 - '3'
 target_platform:
 - win-64
+zip_keys:
+- - libgrpc
+  - libprotobuf
 zlib:
 - '1.2'
