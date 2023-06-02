@@ -1,4 +1,4 @@
-{% set version = "2.10.1" %}
+{% set version = "2.11.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,19 +6,19 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: dbd8ff9cdda8b991049094c41d9125438098422658c77dc1afab524c589efeda
+  sha256: a302ad006496a841f6aaca66a702714bf50ca6e71718193dcf58e0e8a70df561
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
     # and compiler, they need a newer version of Protobuf.  That is, they
     # compile with older versions of Protobuf on some combinations of platform,
-    # combpiler, and C++ standard library. For more information, see:
+    # compiler, and C++ standard library. For more information, see:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8125
     #   https://github.com/googleapis/google-cloud-cpp/issues/8145
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
     - patches/0001-disable-libraries.patch
 
 build:
-  number: 1
+  number: 0
 requirements:
   build:
     - {{ compiler('c') }}
@@ -146,5 +146,6 @@ extra:
   recipe-maintainers:
     - coryan
     - davidbrochart
-    - xhochy
+    - dbolduc
     - h-vetinari
+    - xhochy

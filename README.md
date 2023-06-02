@@ -200,6 +200,7 @@ Feedstock Maintainers
 
 * [@coryan](https://github.com/coryan/)
 * [@davidbrochart](https://github.com/davidbrochart/)
+* [@dbolduc](https://github.com/dbolduc/)
 * [@h-vetinari](https://github.com/h-vetinari/)
 * [@xhochy](https://github.com/xhochy/)
 
