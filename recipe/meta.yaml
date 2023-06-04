@@ -15,7 +15,7 @@ source:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8125
     #   https://github.com/googleapis/google-cloud-cpp/issues/8145
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
-    - patches/0001-disable-libraries.patch
+    - patches/0001-disable-libraries.patch  # [libprotobuf == "3.21"]
 
 build:
   number: 0
