@@ -16,8 +16,6 @@ source:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8145
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
     - patches/0001-disable-libraries.patch  # [libprotobuf == "3.21"]
-    # backport https://github.com/googleapis/google-cloud-cpp/pull/11782
-    - patches/0002-fix-better-support-for-cross-compilation-11782.patch
 
 build:
   number: 0
