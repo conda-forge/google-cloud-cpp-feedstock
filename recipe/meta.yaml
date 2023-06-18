@@ -45,7 +45,9 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
+        # patch versions guaranteed to be ABI-compatible, see
+        # https://github.com/googleapis/google-cloud-cpp/blob/main/doc/adr/2023-05-03-patch-releases-are-ABI-compatible.md
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -89,7 +91,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x.x") }}
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
