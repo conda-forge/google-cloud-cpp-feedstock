@@ -1,7 +1,7 @@
-From 0012bc6ca9f1b3d3d4023ce763afb5f9a8057dd6 Mon Sep 17 00:00:00 2001
+From 06db3d22c2a6466d690cbc05596627c763e3405e Mon Sep 17 00:00:00 2001
 From: Carlos O'Ryan <coryan@google.com>
 Date: Tue, 7 Feb 2023 01:35:26 +0000
-Subject: [PATCH] disable libraries
+Subject: [PATCH 1/2] disable libraries
 
 ---
  cmake/GoogleCloudCppFeatures.cmake | 6 +++---
