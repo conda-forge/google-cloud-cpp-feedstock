@@ -17,7 +17,7 @@ source:
     #   https://github.com/googleapis/google-cloud-cpp/issues/8785
     - patches/0001-disable-libraries.patch  # [libprotobuf == "3.21"]
     # disable a large new feature in 2.12 due to running into 6h timeout
-    - patches/0002-disable-aiplatform-feature.patch  # [win]
+    - patches/0002-disable-aiplatform-feature.patch  # [not (linux64 or osx)]
 
 build:
   number: 0
