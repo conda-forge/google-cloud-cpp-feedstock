@@ -1,0 +1,22 @@
+From 2afb8fb75983511f812939dc3ba2ca32460034fb Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Mon, 19 Jun 2023 07:59:29 +1100
+Subject: [PATCH 2/2] disable aiplatform feature
+
+---
+ cmake/GoogleCloudCppFeatures.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/GoogleCloudCppFeatures.cmake b/cmake/GoogleCloudCppFeatures.cmake
+index c42e3bf4a0..d3b4072f53 100644
+--- a/cmake/GoogleCloudCppFeatures.cmake
++++ b/cmake/GoogleCloudCppFeatures.cmake
+@@ -38,7 +38,7 @@ set(GOOGLE_CLOUD_CPP_GA_LIBRARIES
+     "accessapproval"
+     "accesscontextmanager"
+     "advisorynotifications"
+-    "aiplatform"
++    # "aiplatform" -- disabled on windows due to running into timeout limits & new in 2.12
+     "alloydb"
+     "apigateway"
+     "apigeeconnect"
