@@ -20,7 +20,7 @@ source:
     - patches/0002-disable-aiplatform-feature.patch  # [not (linux64 or osx)]
 
 build:
-  number: 0
+  number: 1
 requirements:
   build:
     - {{ compiler('c') }}
