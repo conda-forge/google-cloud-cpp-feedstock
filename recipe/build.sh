@@ -10,8 +10,26 @@ if [[ "${target_platform}" == osx-* ]]; then
 fi
 
 cmake ${CMAKE_ARGS} \
+    -GNinja -S . -B .build-core \
+    -DGOOGLE_CLOUD_CPP_ENABLE=bigtable,iam,pubsub,storage,spanner \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_SHARED_LIBS=ON \
+    -DOPENSSL_ROOT_DIR=$PREFIX \
+    -DCMAKE_BUILD_TYPE=release \
+    -DCMAKE_CXX_STANDARD=17 \
+    -DCMAKE_INSTALL_PREFIX=$PREFIX \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DProtobuf_PROTOC_EXECUTABLE=$BUILD_PREFIX/bin/protoc \
+    -DGOOGLE_CLOUD_CPP_GRPC_PLUGIN_EXECUTABLE=$BUILD_PREFIX/bin/grpc_cpp_plugin \
+    -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
+
+cmake --build .build-core
+
+cmake --install .build-core --component google_cloud_cpp_development
+
+cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake \
-    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__ \
+    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner \
     -DBUILD_TESTING=OFF \
     -DBUILD_SHARED_LIBS=ON \
     -DOPENSSL_ROOT_DIR=$PREFIX \
