@@ -1,4 +1,4 @@
-{% set version = "2.12.0" %}
+{% set version = "2.15.1" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: 8cda870803925c62de8716a765e03eb9d34249977e5cdb7d0d20367e997a55e2
+  sha256: 47a5c6beff48625fa1b65b1ddc575247def80c88d29062c66d463172280d3959
   patches:
     # Several libraries do not compile under Conda.  Depending on the platform
     # and compiler, they need a newer version of Protobuf.  That is, they
@@ -20,7 +20,7 @@ source:
     - patches/0002-disable-aiplatform-feature.patch  # [not (linux64 or osx)]
 
 build:
-  number: 3
+  number: 0
 requirements:
   build:
     - {{ compiler('c') }}
