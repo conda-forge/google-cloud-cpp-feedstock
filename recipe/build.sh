@@ -30,6 +30,7 @@ cmake --install .build-core --component google_cloud_cpp_development
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake \
     -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner \
+    -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON \
     -DBUILD_TESTING=OFF \
     -DBUILD_SHARED_LIBS=ON \
     -DOPENSSL_ROOT_DIR=$PREFIX \

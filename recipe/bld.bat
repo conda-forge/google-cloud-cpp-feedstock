@@ -28,6 +28,7 @@ cmake --install build_core --component google_cloud_cpp_development
 cmake -G "Ninja" ^
     -S . -B build ^
     -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner ^
+    -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON \
     -DBUILD_TESTING=OFF ^
     -DBUILD_SHARED_LIBS=OFF ^
     -DCMAKE_BUILD_TYPE=Release ^
