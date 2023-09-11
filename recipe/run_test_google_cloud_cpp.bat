@@ -4,8 +4,13 @@ setlocal EnableDelayedExpansion
 @REM CMake does not like paths with \ characters
 set LIBRARY_PREFIX="%LIBRARY_PREFIX:\=/%"
 
+set LIBRARY=storage
+if [%PKG_NAME%] == [google-cloud-cpp-full] (
+  set LIBRARY=kms
+)
+
 cmake -GNinja ^
-    -S google/cloud/storage/quickstart -B .build/quickstart ^
+    -S google/cloud/%LIBRARY%/quickstart -B .build/quickstart ^
     -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^

@@ -142,6 +142,7 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
+        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
         - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
     requirements:
       build:
@@ -151,7 +152,6 @@ outputs:
         - ninja
         - libgrpc
         - libprotobuf
-        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - libabseil
@@ -167,7 +167,22 @@ outputs:
         # cannot load package without zlib because it's specified
         # as required; if possible, this should be removed upstream
         - zlib
-        # TODO - missing tests
+    test:
+      commands:
+        - ./run_test_google_cloud_cpp.sh   # [unix]
+        - ./run_test_google_cloud_cpp.bat  # [win]
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_kms-config.cmake  # [not win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
+      requires:
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+      files:
+        - run_test_google_cloud_cpp.sh
+        - run_test_google_cloud_cpp.bat
+      source_files:
+        - google/cloud/kms/quickstart/*.cc
+        - google/cloud/kms/quickstart/CMakeLists.txt
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
