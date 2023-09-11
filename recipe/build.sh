@@ -9,17 +9,9 @@ if [[ "${target_platform}" == osx-* ]]; then
   CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
-FEATURES=bigtable,iam,pubsub,storage,spanner
-USE_INSTALLED_COMMON=OFF
-if [[ "$PKG_NAME" == "google-cloud-cpp-full" ]]; then
-  FEATURES=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner
-  USE_INSTALLED_COMMON=ON
-fi
-
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake \
-    -DGOOGLE_CLOUD_CPP_ENABLE=$FEATURES \
-    -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=$USE_INSTALLED_COMMON \
+    -DGOOGLE_CLOUD_CPP_ENABLE=bigtable,iam,pubsub,storage,spanner \
     -DBUILD_TESTING=OFF \
     -DBUILD_SHARED_LIBS=ON \
     -DOPENSSL_ROOT_DIR=$PREFIX \

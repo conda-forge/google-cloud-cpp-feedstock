@@ -6,17 +6,9 @@ set LIBRARY_PREFIX="%LIBRARY_PREFIX:\=/%"
 set BUILD_PREFIX="%BUILD_PREFIX:\=/%"
 set SRC_DIR="%SRC_DIR:\=/%"
 
-set FEATURES=bigtable,iam,pubsub,storage,spanner
-set USE_INSTALLED_COMMON=OFF
-if [%PKG_NAME%] == [google-cloud-cpp-full] (
-  set FEATURES=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner
-  set USE_INSTALLED_COMMON=ON
-)
-
 cmake -G "Ninja" ^
     -S . -B build ^
-    -DGOOGLE_CLOUD_CPP_ENABLE=%FEATURES% ^
-    -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=%USE_INSTALLED_COMMON% ^
+    -DGOOGLE_CLOUD_CPP_ENABLE=bigtable,iam,pubsub,storage,spanner ^
     -DBUILD_TESTING=OFF ^
     -DBUILD_SHARED_LIBS=OFF ^
     -DCMAKE_BUILD_TYPE=Release ^
