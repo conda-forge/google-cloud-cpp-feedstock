@@ -100,6 +100,9 @@ outputs:
         - ninja
         - libgrpc
         - libprotobuf
+        # cannot load package without zlib because it's specified
+        # as required; if possible, this should be removed upstream
+        - zlib
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - libabseil
@@ -137,12 +140,14 @@ outputs:
       source_files:
         - google/cloud/storage/quickstart/*.cc
         - google/cloud/storage/quickstart/CMakeLists.txt
-  - name: google-cloud-cpp-full
+
+  - name: libgoogle-cloud-full
     script: build-libgoogle-cloud.sh  # [unix]
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
+        # patch versions guaranteed to be ABI-compatible, see
+        # https://github.com/googleapis/google-cloud-cpp/blob/main/doc/adr/2023-05-03-patch-releases-are-ABI-compatible.md
         - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
     requirements:
       build:
@@ -152,6 +157,45 @@ outputs:
         - ninja
         - libgrpc
         - libprotobuf
+      host:
+        - libabseil
+        - libcrc32c
+        - libcurl
+        - libgrpc
+        - libprotobuf
+        - openssl
+        - nlohmann_json
+      run_constrained:
+        - google-cloud-cpp-full {{ version }} *_{{ PKG_BUILDNUM }}
+    test:
+      commands:
+        # We use google/cloud/kms as a test. There is nothing special about
+        # this library, that is why it makes for a good test.
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_kms.{{ version }}.dylib  # [osx]
+        - test -f $PREFIX/lib/libgoogle_cloud_cpp_kms.so.{{ version }}  # [linux]
+        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_kms/google_cloud_cpp_kms-config.cmake  # [not win]
+        # Currently, the windows build is static.
+        #- if not exist %LIBRARY_PREFIX%\\bin\\libgoogle_cloud_cpp_kms.dll exit 1  # [win]
+        #- if not exist %LIBRARY_PREFIX%\\lib\\pkgconfig\\google_cloud_cpp_kms.pc exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_kms\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
+
+  - name: google-cloud-cpp-full
+    script: build-libgoogle-cloud.sh  # [unix]
+    script: build-libgoogle-cloud.bat  # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
+        - libgrpc
+        - libprotobuf
+        # cannot load package without zlib because it's specified
+        # as required; if possible, this should be removed upstream
+        - zlib
       host:
         - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
         - libabseil
