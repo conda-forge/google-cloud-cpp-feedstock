@@ -122,10 +122,12 @@ outputs:
       commands:
         - ./run_test_google_cloud_cpp.sh   # [unix]
         - ./run_test_google_cloud_cpp.bat  # [win]
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_googleapis/google_cloud_cpp_googleapis-config.cmake  # [not win]
         - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_storage-config.cmake  # [not win]
         - test -f $PREFIX/include/google/cloud/storage/version.h  # [not win]
         - test -f $PREFIX/lib/cmake/google_cloud_cpp_bigtable/google_cloud_cpp_bigtable-config.cmake  # [not win]
         - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [not win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_googleapis\\google_cloud_cpp_googleapis-config.cmake exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_storage-config.cmake exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\\include\\google\\cloud\\storage\\version.h exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_bigtable\\google_cloud_cpp_bigtable-config.cmake exit 1  # [win]
@@ -165,6 +167,8 @@ outputs:
         - libprotobuf
         - openssl
         - nlohmann_json
+      run:
+        - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
       run_constrained:
         - google-cloud-cpp-full {{ version }} *_{{ PKG_BUILDNUM }}
     test:
@@ -184,7 +188,8 @@ outputs:
     script: build-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
-        - {{ pin_subpackage("libgoogle-cloud", max_pin="x.x") }}
+        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
+        - {{ pin_subpackage("libgoogle-cloud-full", max_pin="x.x") }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -197,7 +202,7 @@ outputs:
         # as required; if possible, this should be removed upstream
         - zlib
       host:
-        - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
+        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
         - libabseil
         - libcrc32c
         - libcurl
@@ -206,7 +211,8 @@ outputs:
         - openssl
         - nlohmann_json
       run:
-        - {{ pin_subpackage("libgoogle-cloud", exact=True) }}
+        - {{ pin_subpackage("google-cloud-cpp", exact=True) }}
+        - {{ pin_subpackage("libgoogle-cloud-full", exact=True) }}
         - nlohmann_json
         # cannot load package without zlib because it's specified
         # as required; if possible, this should be removed upstream
@@ -215,8 +221,8 @@ outputs:
       commands:
         - ./run_test_google_cloud_cpp.sh   # [unix]
         - ./run_test_google_cloud_cpp.bat  # [win]
-        - test -f $PREFIX/lib/cmake/google_cloud_cpp_storage/google_cloud_cpp_kms-config.cmake  # [not win]
-        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_storage\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
+        - test -f $PREFIX/lib/cmake/google_cloud_cpp_kms/google_cloud_cpp_kms-config.cmake  # [not win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_kms\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
       requires:
         - {{ compiler('cxx') }}
         - cmake

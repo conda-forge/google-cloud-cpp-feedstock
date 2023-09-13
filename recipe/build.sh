@@ -36,11 +36,11 @@ cmake --install build_cmake --prefix stage
 echo =======================================================================
 echo CMAKE_ARGS=${CMAKE_ARGS}
 echo =======================================================================
-echo PWD=$PWD
+echo PWD="$(pwd)"
 echo =======================================================================
 echo =======================================================================
 
-# TODO: replace =kms with =__ga_libraries_,-bigtable,-iam,-pubsub,-storage,-spanner 
+# TODO: replace =kms with =__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner 
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake_full \
     -DGOOGLE_CLOUD_CPP_ENABLE=kms \
