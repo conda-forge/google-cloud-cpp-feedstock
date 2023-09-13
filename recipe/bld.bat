@@ -30,8 +30,9 @@ if %ERRORLEVEL% neq 0 exit 1
 #   hosts the full build (e.g. google-cloud-cpp-full-feedstock)
 #
 cmake --install build --prefix stage
+if %ERRORLEVEL% neq 0 exit 1
 
-STAGE="%cd:\=/%"
+set STAGE="%cd:\=/%"
 
 cmake -G "Ninja" ^
     -S . -B build_full ^
@@ -49,5 +50,5 @@ cmake -G "Ninja" ^
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
 if %ERRORLEVEL% neq 0 exit 1
 
-cmake --build build --config Release
+cmake --build build_full --config Release
 if %ERRORLEVEL% neq 0 exit 1
