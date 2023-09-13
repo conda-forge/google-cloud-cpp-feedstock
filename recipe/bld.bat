@@ -23,12 +23,10 @@ if %ERRORLEVEL% neq 0 exit 1
 cmake --build build --config Release
 if %ERRORLEVEL% neq 0 exit 1
 
-#
-# TODO: the rest of this file just shows how to build with the core components
-#   pre-installed. We need to choose if we create a new package that hosts the
-#   core components (e.g. google-cloud-cpp-core-feedstock) or a new package that
-#   hosts the full build (e.g. google-cloud-cpp-full-feedstock)
-#
+@REM TODO: the rest of this file just shows how to build with the core components
+@REM   pre-installed. We need to choose if we create a new package that hosts the
+@REM   core components (e.g. google-cloud-cpp-core-feedstock) or a new package that
+@REM   hosts the full build (e.g. google-cloud-cpp-full-feedstock)
 cmake --install build --prefix stage
 if %ERRORLEVEL% neq 0 exit 1
 
