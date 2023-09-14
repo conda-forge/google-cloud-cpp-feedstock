@@ -34,7 +34,7 @@ set STAGE="%cd:\=/%"
 
 cmake -G "Ninja" ^
     -S . -B build_full ^
-    -DGOOGLE_CLOUD_CPP_ENABLE=kms” ^
+    -DGOOGLE_CLOUD_CPP_ENABLE=kms ^
     -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON ^
     -DCMAKE_PREFIX_PATH="%STAGE%/stage" ^
     -DBUILD_TESTING=OFF ^
