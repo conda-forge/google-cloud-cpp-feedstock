@@ -30,20 +30,14 @@ cmake --build build_cmake
 #   pre-installed. We need to choose if we create a new package that hosts the
 #   core components (e.g. google-cloud-cpp-core-feedstock) or a new package that
 #   hosts the full build (e.g. google-cloud-cpp-full-feedstock)
+#   Installing in `stage` would not be needed once the packages are split, nor
+#   would the `-DCMAKE_PREFIX_PATH` setting.
 #
 cmake --install build_cmake --prefix stage
 
-echo =======================================================================
-echo CMAKE_ARGS=${CMAKE_ARGS}
-echo =======================================================================
-echo PWD="$(pwd)"
-echo =======================================================================
-echo =======================================================================
-
-# TODO: replace =kms with =__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner 
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake_full \
-    -DGOOGLE_CLOUD_CPP_ENABLE=kms \
+    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner \
     -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON \
     -DCMAKE_PREFIX_PATH="${CMAKE_PREFIX_PATH};${PWD}/stage" \
     -DBUILD_TESTING=OFF \
