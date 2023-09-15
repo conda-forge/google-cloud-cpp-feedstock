@@ -9,6 +9,8 @@ if [[ "${target_platform}" == osx-* ]]; then
   CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
+# TODO: These build steps compile the most popular features
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): Building most popular features..."
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake \
     -DGOOGLE_CLOUD_CPP_ENABLE=bigtable,iam,pubsub,storage,spanner \
@@ -24,6 +26,7 @@ cmake ${CMAKE_ARGS} \
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
 
 cmake --build build_cmake
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): DONE - Building most popular features"
 
 #
 # TODO: the rest of this file just shows how to build with the core components
@@ -33,11 +36,17 @@ cmake --build build_cmake
 #   Installing in `stage` would not be needed once the packages are split, nor
 #   would the `-DCMAKE_PREFIX_PATH` setting.
 #
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): Staging popular features..."
 cmake --install build_cmake --prefix stage
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): DONE - Staging popular features..."
 
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): Building remaining features..."
+# TODO: using `kms`` as the only features to time the build for the most popular
+# features.  In at least one feedstock we would want to build with
+# -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner
 cmake ${CMAKE_ARGS} \
     -GNinja -S . -B build_cmake_full \
-    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,-bigtable,-iam,-pubsub,-storage,-spanner \
+    -DGOOGLE_CLOUD_CPP_ENABLE=kms \
     -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON \
     -DCMAKE_PREFIX_PATH="${CMAKE_PREFIX_PATH};${PWD}/stage" \
     -DBUILD_TESTING=OFF \
@@ -52,3 +61,4 @@ cmake ${CMAKE_ARGS} \
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
 
 cmake --build build_cmake_full
+echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): DONE - Building remaining features"
