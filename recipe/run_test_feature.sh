@@ -9,8 +9,8 @@ if [[ "${target_platform}" == osx-* ]]; then
 fi
 
 cmake -GNinja \
-    -S google/cloud/storage/quickstart -B .build/quickstart \
+    -S "google/cloud/kms/quickstart" -B .build \
     -DCMAKE_CXX_STANDARD=17 \
     -DCMAKE_PREFIX_PATH="$PREFIX" \
     -DCMAKE_MODULE_PATH="$PREFIX/lib/cmake"
-cmake --build .build/quickstart
+cmake --build .build
