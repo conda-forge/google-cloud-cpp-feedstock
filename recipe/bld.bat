@@ -7,23 +7,20 @@ set BUILD_PREFIX="%BUILD_PREFIX:\=/%"
 set SRC_DIR="%SRC_DIR:\=/%"
 
 set DISABLED=""
-:: `oauth2` thru `storage` are provided by `google-cloud-cpp-core-feedstock`.
+:: The following features are provided by `google-cloud-cpp-core-feedstock`.
+set DISABLED=%DISABLED%,-oauth2
+set DISABLED=%DISABLED%,-bigtable
+set DISABLED=%DISABLED%,-iam
+set DISABLED=%DISABLED%,-policytroubleshooter
+set DISABLED=%DISABLED%,-pubsub
+set DISABLED=%DISABLED%,-spanner
+set DISABLED=%DISABLED%,-storage
 :: `compute` will be provided by `google-cloud-cpp-compute-feedstock` and is
 ::   disabled until the new feedstack appears because it is too large.
+set DISABLED=%DISABLED%,-compute
 :: `aiplatform` will be provided by `google-cloud-cpp-ai-feedstock` and is
 ::   disabled until the new feedstock appears because it is too large.
-FOR %G IN   oauth2 ^
-            bigtable ^
-            iam ^
-            policytroubleshooter ^
-            pubsub ^
-            spanner ^
-            storage ^
-            compute ^
-            aiplatform ^
-       DO (
-    set DISABLED="%DISABLED%,-%G"
-)
+set DISABLED=%DISABLED%,-aiplatform
 
 cmake -G "Ninja" ^
     -S . -B .build/all ^
