@@ -60,11 +60,21 @@ outputs:
     test:
       commands:
         # We use `kms` as a canary. Any other feature could do the job.
+        #
+        # presence of shared library (unix)
         - test -f $PREFIX/lib/libgoogle_cloud_cpp_kms.{{ version }}.dylib  # [osx]
         - test -f $PREFIX/lib/libgoogle_cloud_cpp_kms.so.{{ version }}  # [linux]
-        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_kms.pc  # [not win]
-        - test ! -f $PREFIX/include/google/cloud/kms/v1/ekm_client.h  # [not win]
-        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_kms/google_cloud_cpp_kms-config.cmake  # [not win]
+
+        # absence of static library (windows). It belongs only in devel package.
+        - if exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
+
+        # absence of headers (they belong in devel package)
+        - test ! -f $PREFIX/include/google/cloud/kms/v1/ekm_client.h  # [unix]
+        - if exist %LIBRARY_INC%\google\cloud\kms\v1\ekm_client.h exit 1  # [win]
+
+        # absence of metadata for CMake & pkgconfig (belongs in devel package)
+        - test ! -f $PREFIX/lib/pkgconfig/google_cloud_cpp_kms.pc  # [unix]
+        - test ! -f $PREFIX/lib/cmake/google_cloud_cpp_kms/google_cloud_cpp_kms-config.cmake  # [unix]
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_kms\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
 
   - name: libgoogle-cloud-all-devel
@@ -85,9 +95,13 @@ outputs:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
     test:
       commands:
-        # presence of headers
+        # presence of headers (they belong in devel package)
         - test -f $PREFIX/include/google/cloud/kms/ekm_client.h            # [unix]
         - if not exist %LIBRARY_INC%\google\cloud\kms\ekm_client.h exit 1  # [win]
+
+        # presence of static library (on Windows)
+        - if not exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
+
         # build an example
         - ./run_test_feature.sh   # [unix]
         - ./run_test_feature.bat  # [win]
