@@ -1,14 +1,34 @@
 @echo on
 setlocal EnableDelayedExpansion
 
-@REM CMake does not like paths with \ characters
+:: CMake does not like paths with \ characters
 set LIBRARY_PREFIX="%LIBRARY_PREFIX:\=/%"
 set BUILD_PREFIX="%BUILD_PREFIX:\=/%"
 set SRC_DIR="%SRC_DIR:\=/%"
 
+set DISABLED=""
+:: `oauth2` thru `storage` are provided by `google-cloud-cpp-core-feedstock`.
+:: `compute` will be provided by `google-cloud-cpp-compute-feedstock` and is
+::   disabled until the new feedstack appears because it is too large.
+:: `aiplatform` will be provided by `google-cloud-cpp-ai-feedstock` and is
+::   disabled until the new feedstock appears because it is too large.
+FOR %G IN   oauth2 ^
+            bigtable ^
+            iam ^
+            policytroubleshooter ^
+            pubsub ^
+            spanner ^
+            storage ^
+            compute ^
+            aiplatform ^
+       DO (
+    set DISABLED="%DISABLED%,-%G"
+)
+
 cmake -G "Ninja" ^
-    -S . -B build ^
-    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__ ^
+    -S . -B .build/all ^
+    -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__%DISABLED% ^
+    -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON ^
     -DBUILD_TESTING=OFF ^
     -DBUILD_SHARED_LIBS=OFF ^
     -DCMAKE_BUILD_TYPE=Release ^
@@ -20,5 +40,5 @@ cmake -G "Ninja" ^
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
 if %ERRORLEVEL% neq 0 exit 1
 
-cmake --build build --config Release
+cmake --build .build/all  --config Release
 if %ERRORLEVEL% neq 0 exit 1
