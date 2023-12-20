@@ -7,8 +7,8 @@ setlocal EnableDelayedExpansion
 ::     cmake --install .build --component google_cloud_cpp_development
 
 if [%PKG_NAME%] == [libgoogle-cloud-all] (
-  @REM Nothing to do, installed by contentwarehouse
-) else if [%PKG_NAME%] == [libgoogle-cloud-all] (
+  @REM Nothing to do, installed by libgoogle-cloud-all-devel
+) else if [%PKG_NAME%] == [libgoogle-cloud-all-devel] (
   cmake --install .build/all
   if %ERRORLEVEL% neq 0 exit 1
 ) else (
