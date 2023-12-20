@@ -36,8 +36,8 @@ requirements:
 
 outputs:
   - name: libgoogle-cloud-all
-    script: build-libgoogle-cloud.sh  # [unix]
-    script: build-libgoogle-cloud.bat  # [win]
+    script: install-libgoogle-cloud.sh  # [unix]
+    script: install-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
         # patch versions guaranteed to be ABI-compatible, see
@@ -78,8 +78,8 @@ outputs:
         - if exist %LIBRARY_PREFIX%\\lib\\cmake\\google_cloud_cpp_kms\\google_cloud_cpp_kms-config.cmake exit 1  # [win]
 
   - name: libgoogle-cloud-all-devel
-    script: build-libgoogle-cloud.sh  # [unix]
-    script: build-libgoogle-cloud.bat  # [win]
+    script: install-libgoogle-cloud.sh  # [unix]
+    script: install-libgoogle-cloud.bat  # [win]
     build:
       run_exports:
         - {{ pin_subpackage("libgoogle-cloud-all", max_pin="x.x") }}
