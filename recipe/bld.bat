@@ -7,7 +7,7 @@ set BUILD_PREFIX="%BUILD_PREFIX:\=/%"
 set SRC_DIR="%SRC_DIR:\=/%"
 
 set DISABLED=""
-:: The following features are provided by `google-cloud-cpp-core-feedstock`.
+:: Provided by `google-cloud-cpp-core-feedstock`.
 set DISABLED=%DISABLED%,-oauth2
 set DISABLED=%DISABLED%,-bigtable
 set DISABLED=%DISABLED%,-iam
@@ -15,11 +15,9 @@ set DISABLED=%DISABLED%,-policytroubleshooter
 set DISABLED=%DISABLED%,-pubsub
 set DISABLED=%DISABLED%,-spanner
 set DISABLED=%DISABLED%,-storage
-:: `compute` will be provided by `google-cloud-cpp-compute-feedstock` and is
-::   disabled until the new feedstack appears because it is too large.
+:: Provided by `google-cloud-cpp-compute-feedstock`.
 set DISABLED=%DISABLED%,-compute
-:: `aiplatform` will be provided by `google-cloud-cpp-ai-feedstock` and is
-::   disabled until the new feedstock appears because it is too large.
+:: Provided by `google-cloud-cpp-compute-ai-feedstock`.
 set DISABLED=%DISABLED%,-aiplatform
 set DISABLED=%DISABLED%,-automl
 set DISABLED=%DISABLED%,-discoveryengine
@@ -32,6 +30,15 @@ set DISABLED=%DISABLED%,-timeseriesinsights
 set DISABLED=%DISABLED%,-translate
 set DISABLED=%DISABLED%,-videointelligence
 set DISABLED=%DISABLED%,-vision
+:: Provided by `google-cloud-cpp-bigquery-feedstock`.
+set DISABLED=%DISABLED%,-bigquery
+:: TODO(coryan) - pick a cutoff
+set DISABLED=%DISABLED%,-monitoring
+set DISABLED=%DISABLED%,-retail
+set DISABLED=%DISABLED%,-appengine
+set DISABLED=%DISABLED%,-sql
+set DISABLED=%DISABLED%,-resourcemanager
+set DISABLED=%DISABLED%,-dataproc
 
 cmake -G "Ninja" ^
     -S . -B .build/all ^

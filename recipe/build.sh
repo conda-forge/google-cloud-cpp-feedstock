@@ -15,7 +15,7 @@ fi
 # for the feedstock.  They are not, however, all the AI based features in
 # `google-cloud-cpp`.
 feature_list=(
-  # Provided by `google-cloud-cpp-core-feedstock`
+  # Provided by `google-cloud-cpp-core-feedstock`.
   oauth2
   bigtable
   iam
@@ -23,11 +23,9 @@ feature_list=(
   pubsub
   spanner
   storage
-  # Provided (soon) by `google-cloud-cpp-compute-feedstock` and disabled until
-  # the feedstock appears because it is too large.
+  # Provided by `google-cloud-cpp-compute-feedstock`.
   compute
-  # Provided (soon) by `google-cloud-cpp-compute-ai` and disabled until
-  # the feedstock appears because it is too large.
+  # Provided by `google-cloud-cpp-compute-ai-feedstock`.
   aiplatform
   automl
   discoveryengine
@@ -40,6 +38,15 @@ feature_list=(
   translate
   videointelligence
   vision
+  # Provided by `google-cloud-cpp-bigquery-feedstock`.
+  bigquery
+  # TODO(coryan) - pick a cutoff
+  monitoring
+  retail
+  appengine
+  sql
+  resourcemanager
+  dataproc
 )
 disabled=$(printf ",-%s" "${feature_list[@]}")
 
