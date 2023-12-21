@@ -29,6 +29,17 @@ feature_list=(
   # Provided (soon) by `google-cloud-cpp-compute-ai` and disabled until
   # the feedstock appears because it is too large.
   aiplatform
+  automl
+  discoveryengine
+  dialogflow_es
+  dialogflow_cx
+  dlp
+  speech
+  texttospeech
+  timeseriesinsights
+  translate
+  videointelligence
+  vision
 )
 disabled=$(printf ",-%s" "${feature_list[@]}")
 
