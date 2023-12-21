@@ -57,6 +57,28 @@ outputs:
         - libgrpc
         - libprotobuf
         - libgoogle-cloud =={{ version }}
+      run:
+        - libgoogle-cloud-bigtable
+        - libgoogle-cloud-iam
+        - libgoogle-cloud-oauth2
+        - libgoogle-cloud-policytroubleshooter
+        - libgoogle-cloud-pubsub
+        - libgoogle-cloud-spanner
+        - libgoogle-cloud-storage
+        # not yet available
+        # - libgoogle-cloud-compute
+        # - libgoogle-cloud-aiplatform
+        # - libgoogle-cloud-automl
+        # - libgoogle-cloud-discoveryengine
+        # - libgoogle-cloud-dialogflow_es
+        # - libgoogle-cloud-dialogflow_cx
+        # - libgoogle-cloud-dlp
+        # - libgoogle-cloud-speech
+        # - libgoogle-cloud-texttospeech
+        # - libgoogle-cloud-timeseriesinsights
+        # - libgoogle-cloud-translate
+        # - libgoogle-cloud-videointelligence
+        # - libgoogle-cloud-vision
     test:
       commands:
         # We use `kms` as a canary. Any other feature could do the job.
@@ -110,6 +132,27 @@ outputs:
         - cmake
         - ninja
         - libgoogle-cloud-devel =={{ version }}
+        - libgoogle-cloud-bigtable-devel
+        - libgoogle-cloud-iam-devel
+        - libgoogle-cloud-oauth2-devel
+        - libgoogle-cloud-policytroubleshooter-devel
+        - libgoogle-cloud-pubsub-devel
+        - libgoogle-cloud-spanner-devel
+        - libgoogle-cloud-storage-devel
+        # not yet available
+        # - libgoogle-cloud-compute-devel
+        # - libgoogle-cloud-aiplatform-devel
+        # - libgoogle-cloud-automl-devel
+        # - libgoogle-cloud-discoveryengine-devel
+        # - libgoogle-cloud-dialogflow_es-devel
+        # - libgoogle-cloud-dialogflow_cx-devel
+        # - libgoogle-cloud-dlp-devel
+        # - libgoogle-cloud-speech-devel
+        # - libgoogle-cloud-texttospeech-devel
+        # - libgoogle-cloud-timeseriesinsights-devel
+        # - libgoogle-cloud-translate-devel
+        # - libgoogle-cloud-videointelligence-devel
+        # - libgoogle-cloud-vision-devel
       files:
         - run_test_feature.sh
         - run_test_feature.bat

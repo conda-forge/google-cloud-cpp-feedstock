@@ -21,6 +21,17 @@ set DISABLED=%DISABLED%,-compute
 :: `aiplatform` will be provided by `google-cloud-cpp-ai-feedstock` and is
 ::   disabled until the new feedstock appears because it is too large.
 set DISABLED=%DISABLED%,-aiplatform
+set DISABLED=%DISABLED%,-automl
+set DISABLED=%DISABLED%,-discoveryengine
+set DISABLED=%DISABLED%,-dialogflow_es
+set DISABLED=%DISABLED%,-dialogflow_cx
+set DISABLED=%DISABLED%,-dlp
+set DISABLED=%DISABLED%,-speech
+set DISABLED=%DISABLED%,-texttospeech
+set DISABLED=%DISABLED%,-timeseriesinsights
+set DISABLED=%DISABLED%,-translate
+set DISABLED=%DISABLED%,-videointelligence
+set DISABLED=%DISABLED%,-vision
 
 cmake -G "Ninja" ^
     -S . -B .build/all ^
