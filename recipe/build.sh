@@ -44,9 +44,10 @@ feature_list=(
   monitoring
   retail
   appengine
-  sql
-  resourcemanager
-  dataproc
+  # sql
+  # resourcemanager
+  # dataproc
+  # 4h18m
 )
 disabled=$(printf ",-%s" "${feature_list[@]}")
 

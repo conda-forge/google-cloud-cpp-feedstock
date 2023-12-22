@@ -36,9 +36,10 @@ set DISABLED=%DISABLED%,-bigquery
 set DISABLED=%DISABLED%,-monitoring
 set DISABLED=%DISABLED%,-retail
 set DISABLED=%DISABLED%,-appengine
-set DISABLED=%DISABLED%,-sql
-set DISABLED=%DISABLED%,-resourcemanager
-set DISABLED=%DISABLED%,-dataproc
+:: set DISABLED=%DISABLED%,-sql
+:: set DISABLED=%DISABLED%,-resourcemanager
+:: set DISABLED=%DISABLED%,-dataproc
+:: 4h18m
 
 cmake -G "Ninja" ^
     -S . -B .build/all ^
