@@ -13,9 +13,9 @@ libcrc32c:
 libcurl:
 - '8'
 libgrpc:
-- '1.59'
+- '1.60'
 libprotobuf:
-- 4.24.4
+- 4.25.1
 openssl:
 - '3'
 target_platform:
