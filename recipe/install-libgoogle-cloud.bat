@@ -9,7 +9,7 @@ setlocal EnableDelayedExpansion
 if [%PKG_NAME%] == [libgoogle-cloud-all] (
   @REM Nothing to do, installed by libgoogle-cloud-all-devel
 ) else if [%PKG_NAME%] == [libgoogle-cloud-all-devel] (
-  cmake --install .build/all
+  cmake --install build
   if %ERRORLEVEL% neq 0 exit 1
 ) else (
   @ECHO Unknown package %PKG_NAME%

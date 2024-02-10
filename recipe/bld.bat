@@ -15,11 +15,11 @@ set DISABLED=%DISABLED%,-policytroubleshooter
 set DISABLED=%DISABLED%,-pubsub
 set DISABLED=%DISABLED%,-spanner
 set DISABLED=%DISABLED%,-storage
-:: `compute` will be provided by `google-cloud-cpp-compute-feedstock` and is
-::   disabled until the new feedstack appears because it is too large.
+:: `bigquery` is provided by `google-cloud-cpp-bigquery-feedstock`.
 set DISABLED=%DISABLED%,-compute
-:: `aiplatform` will be provided by `google-cloud-cpp-ai-feedstock` and is
-::   disabled until the new feedstock appears because it is too large.
+:: `compute` is provided by `google-cloud-cpp-compute-feedstock`.
+set DISABLED=%DISABLED%,-compute
+:: `aiplatform` and friends are be provided by `google-cloud-cpp-ai-feedstock`.
 set DISABLED=%DISABLED%,-aiplatform
 set DISABLED=%DISABLED%,-automl
 set DISABLED=%DISABLED%,-discoveryengine
@@ -27,14 +27,9 @@ set DISABLED=%DISABLED%,-dialogflow_es
 set DISABLED=%DISABLED%,-dialogflow_cx
 set DISABLED=%DISABLED%,-dlp
 set DISABLED=%DISABLED%,-speech
-set DISABLED=%DISABLED%,-texttospeech
-set DISABLED=%DISABLED%,-timeseriesinsights
-set DISABLED=%DISABLED%,-translate
-set DISABLED=%DISABLED%,-videointelligence
-set DISABLED=%DISABLED%,-vision
 
 cmake -G "Ninja" ^
-    -S . -B .build/all ^
+    -S . -B build ^
     -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__%DISABLED% ^
     -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON ^
     -DBUILD_TESTING=OFF ^
@@ -48,5 +43,5 @@ cmake -G "Ninja" ^
     -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
 if %ERRORLEVEL% neq 0 exit 1
 
-cmake --build .build/all  --config Release
+cmake --build build  --config Release
 if %ERRORLEVEL% neq 0 exit 1

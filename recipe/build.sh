@@ -23,11 +23,11 @@ feature_list=(
   pubsub
   spanner
   storage
-  # Provided (soon) by `google-cloud-cpp-compute-feedstock` and disabled until
-  # the feedstock appears because it is too large.
+  # Provided by `google-cloud-cpp-bigquery-feedstock`.
+  bigquery
+  # Provided by `google-cloud-cpp-compute-feedstock`.
   compute
-  # Provided (soon) by `google-cloud-cpp-compute-ai` and disabled until
-  # the feedstock appears because it is too large.
+  # Provided by `google-cloud-cpp-compute-ai`.
   aiplatform
   automl
   discoveryengine
@@ -35,17 +35,12 @@ feature_list=(
   dialogflow_cx
   dlp
   speech
-  texttospeech
-  timeseriesinsights
-  translate
-  videointelligence
-  vision
 )
 disabled=$(printf ",-%s" "${feature_list[@]}")
 
 echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): Building all - (${feature_list[@]})"
 cmake ${CMAKE_ARGS} \
-      -GNinja -S . -B .build/all \
+      -GNinja -S . -B build \
       -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__${disabled} \
       -DGOOGLE_CLOUD_CPP_USE_INSTALLED_COMMON=ON \
       -DBUILD_TESTING=OFF \
@@ -58,5 +53,5 @@ cmake ${CMAKE_ARGS} \
       -DProtobuf_PROTOC_EXECUTABLE=$BUILD_PREFIX/bin/protoc \
       -DGOOGLE_CLOUD_CPP_GRPC_PLUGIN_EXECUTABLE=$BUILD_PREFIX/bin/grpc_cpp_plugin \
       -DGOOGLE_CLOUD_CPP_ENABLE_WERROR=OFF
-cmake --build .build/all
+cmake --build build
 echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ'): DONE all - (${feature_list[@]})"
