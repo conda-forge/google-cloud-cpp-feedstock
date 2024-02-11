@@ -27,7 +27,7 @@ feature_list=(
   bigquery
   # Provided by `google-cloud-cpp-compute-feedstock`.
   compute
-  # Provided by `google-cloud-cpp-compute-ai`.
+  # Provided by `google-cloud-cpp-compute-ai-feedstock`.
   aiplatform
   automl
   discoveryengine
