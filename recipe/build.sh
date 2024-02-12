@@ -11,7 +11,7 @@ fi
 
 # This list represents some of the larger features in `google-cloud-cpp`.
 # Moving them to their own feedstock splits the build time across feedstocks.
-# The features happen to be AI and ML related, which provides a good nemonic
+# The features happen to be AI and ML related, which provides a good mnemonic
 # for the feedstock.  They are not, however, all the AI based features in
 # `google-cloud-cpp`.
 feature_list=(
