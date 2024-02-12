@@ -104,22 +104,6 @@ outputs:
         - libgoogle-cloud-devel =={{ version }}
       run:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
-    test:
-      commands:
-        # presence of headers (they belong in devel package)
-        - test -f $PREFIX/include/google/cloud/kms/ekm_client.h            # [unix]
-        - if not exist %LIBRARY_INC%\google\cloud\kms\ekm_client.h exit 1  # [win]
-
-        # presence of static library (on Windows)
-        - if not exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
-
-        # build an example
-        - ./run_test_feature.sh   # [unix]
-        - ./run_test_feature.bat  # [win]
-      requires:
-        - {{ compiler('cxx') }}
-        - cmake
-        - ninja
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-devel =={{ version }}
         - libgoogle-cloud-oauth2-devel
@@ -141,6 +125,22 @@ outputs:
         - libgoogle-cloud-dialogflow_cx-devel
         - libgoogle-cloud-dlp-devel
         - libgoogle-cloud-speech-devel
+    test:
+      commands:
+        # presence of headers (they belong in devel package)
+        - test -f $PREFIX/include/google/cloud/kms/ekm_client.h            # [unix]
+        - if not exist %LIBRARY_INC%\google\cloud\kms\ekm_client.h exit 1  # [win]
+
+        # presence of static library (on Windows)
+        - if not exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
+
+        # build an example
+        - ./run_test_feature.sh   # [unix]
+        - ./run_test_feature.bat  # [win]
+      requires:
+        - {{ compiler('cxx') }}
+        - cmake
+        - ninja
       files:
         - run_test_feature.sh
         - run_test_feature.bat
