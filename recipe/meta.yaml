@@ -7,9 +7,6 @@ package:
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
   sha256: b820159a4e6f17d0225e2266da563e53884567b8b33d00e45b30bc86be90ad1d
-  patches:
-    # This is an upstream fix to allow sharding google/cloud/oauth2
-    - patches/0001-Backport-12911-from-upstream.patch
 
 build:
   number: 0
