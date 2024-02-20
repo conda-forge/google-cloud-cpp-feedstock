@@ -16,7 +16,7 @@ set DISABLED=%DISABLED%,-pubsub
 set DISABLED=%DISABLED%,-spanner
 set DISABLED=%DISABLED%,-storage
 :: `bigquery` is provided by `google-cloud-cpp-bigquery-feedstock`.
-set DISABLED=%DISABLED%,-compute
+set DISABLED=%DISABLED%,-bigquery
 :: `compute` is provided by `google-cloud-cpp-compute-feedstock`.
 set DISABLED=%DISABLED%,-compute
 :: `aiplatform` and friends are be provided by `google-cloud-cpp-ai-feedstock`.
