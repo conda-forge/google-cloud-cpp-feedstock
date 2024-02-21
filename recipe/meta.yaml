@@ -1,4 +1,4 @@
-{% set version = "2.17.0" %}
+{% set version = "2.21.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,13 +6,10 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: 8cb87ec2947e691a7f8631877e78453bcfda51b3d3cd4940794a376741888d37
-  patches:
-    # This is an upstream fix to allow sharding google/cloud/oauth2
-    - patches/0001-Backport-12911-from-upstream.patch
+  sha256: b820159a4e6f17d0225e2266da563e53884567b8b33d00e45b30bc86be90ad1d
 
 build:
-  number: 7
+  number: 0
 requirements:
   build:
     - {{ compiler('c') }}

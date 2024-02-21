@@ -81,8 +81,8 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-google--cloud--cpp-green.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/google-cloud-cpp.svg)](https://anaconda.org/conda-forge/google-cloud-cpp) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libgoogle--cloud-green.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgoogle-cloud.svg)](https://anaconda.org/conda-forge/libgoogle-cloud) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libgoogle--cloud--all-green.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgoogle-cloud-all.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgoogle-cloud-all.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgoogle-cloud-all.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libgoogle--cloud--all--devel-green.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgoogle-cloud-all-devel.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgoogle-cloud-all-devel.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgoogle-cloud-all-devel.svg)](https://anaconda.org/conda-forge/libgoogle-cloud-all-devel) |
 
 Installing google-cloud-cpp
 ===========================
@@ -94,41 +94,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `google-cloud-cpp, libgoogle-cloud` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libgoogle-cloud-all, libgoogle-cloud-all-devel` can be installed with `conda`:
 
 ```
-conda install google-cloud-cpp libgoogle-cloud
-```
-
-or with `mamba`:
-
-```
-mamba install google-cloud-cpp libgoogle-cloud
-```
-
-It is possible to list all of the versions of `google-cloud-cpp` available on your platform with `conda`:
-
-```
-conda search google-cloud-cpp --channel conda-forge
+conda install libgoogle-cloud-all libgoogle-cloud-all-devel
 ```
 
 or with `mamba`:
 
 ```
-mamba search google-cloud-cpp --channel conda-forge
+mamba install libgoogle-cloud-all libgoogle-cloud-all-devel
+```
+
+It is possible to list all of the versions of `libgoogle-cloud-all` available on your platform with `conda`:
+
+```
+conda search libgoogle-cloud-all --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libgoogle-cloud-all --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search google-cloud-cpp --channel conda-forge
+mamba repoquery search libgoogle-cloud-all --channel conda-forge
 
-# List packages depending on `google-cloud-cpp`:
-mamba repoquery whoneeds google-cloud-cpp --channel conda-forge
+# List packages depending on `libgoogle-cloud-all`:
+mamba repoquery whoneeds libgoogle-cloud-all --channel conda-forge
 
-# List dependencies of `google-cloud-cpp`:
-mamba repoquery depends google-cloud-cpp --channel conda-forge
+# List dependencies of `libgoogle-cloud-all`:
+mamba repoquery depends libgoogle-cloud-all --channel conda-forge
 ```
 
 

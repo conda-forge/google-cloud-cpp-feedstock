@@ -14,8 +14,6 @@ cxx_compiler_version:
 - '16'
 libabseil:
 - '20230802'
-libcrc32c:
-- '1.1'
 libcurl:
 - '8'
 libgrpc:
