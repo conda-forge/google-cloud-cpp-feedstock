@@ -49,13 +49,13 @@ outputs:
         - libgoogle-cloud-oauth2
         - libgoogle-cloud-bigtable
         - libgoogle-cloud-iam
-        # TODO(coryan): - libgoogle-cloud-logging
-        # TODO(coryan): - libgoogle-cloud-monitoring
+        - libgoogle-cloud-logging
+        - libgoogle-cloud-monitoring
         - libgoogle-cloud-policytroubleshooter
         - libgoogle-cloud-pubsub
         - libgoogle-cloud-spanner
         - libgoogle-cloud-storage
-        # TODO(coryan): - libgoogle-cloud-trace
+        - libgoogle-cloud-trace
         # From the google-cloud-cpp-bigquery feedstock
         - libgoogle-cloud-bigquery
         # From the google-cloud-cpp-compute feedstock
@@ -109,13 +109,13 @@ outputs:
         - libgoogle-cloud-oauth2-devel
         - libgoogle-cloud-bigtable-devel
         - libgoogle-cloud-iam-devel
-        # TODO(coryan): - libgoogle-cloud-logging-devel
-        # TODO(coryan): - libgoogle-cloud-monitoring-devel
+        - libgoogle-cloud-logging-devel
+        - libgoogle-cloud-monitoring-devel
         - libgoogle-cloud-policytroubleshooter-devel
         - libgoogle-cloud-pubsub-devel
         - libgoogle-cloud-spanner-devel
         - libgoogle-cloud-storage-devel
-        # TODO(coryan): - libgoogle-cloud-trace-devel
+        - libgoogle-cloud-trace-devel
         # From the google-cloud-cpp-bigquery feedstock
         - libgoogle-cloud-bigquery-devel
         # From the google-cloud-cpp-compute feedstock
