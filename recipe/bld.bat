@@ -11,10 +11,13 @@ set DISABLED=""
 set DISABLED=%DISABLED%,-oauth2
 set DISABLED=%DISABLED%,-bigtable
 set DISABLED=%DISABLED%,-iam
+set DISABLED=%DISABLED%,-logging
+set DISABLED=%DISABLED%,-monitoring
 set DISABLED=%DISABLED%,-policytroubleshooter
 set DISABLED=%DISABLED%,-pubsub
 set DISABLED=%DISABLED%,-spanner
 set DISABLED=%DISABLED%,-storage
+set DISABLED=%DISABLED%,-trace
 :: `bigquery` is provided by `google-cloud-cpp-bigquery-feedstock`.
 set DISABLED=%DISABLED%,-bigquery
 :: `compute` is provided by `google-cloud-cpp-compute-feedstock`.

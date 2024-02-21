@@ -19,10 +19,13 @@ feature_list=(
   oauth2
   bigtable
   iam
+  logging
+  monitoring
   policytroubleshooter
   pubsub
   spanner
   storage
+  trace
   # Provided by `google-cloud-cpp-bigquery-feedstock`.
   bigquery
   # Provided by `google-cloud-cpp-compute-feedstock`.
