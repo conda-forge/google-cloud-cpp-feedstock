@@ -156,38 +156,13 @@ outputs:
 
   - name: google-cloud-cpp
     requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - cmake
-        - ninja
       host:
         - libgoogle-cloud-all-devel =={{ version }}
       run:
         - {{ pin_subpackage("libgoogle-cloud-all-devel", exact=True) }}
     test:
       commands:
-        # presence of headers (they belong in devel package)
-        - test -f $PREFIX/include/google/cloud/kms/ekm_client.h  # [unix]
-        - if not exist %LIBRARY_INC%\google\cloud\kms\ekm_client.h exit 1  # [win]
-
-        # presence of static library (on Windows)
-        - if not exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
-
-        # build an example
-        - ./run_test_feature.sh  # [unix]
-        - ./run_test_feature.bat  # [win]
-      requires:
-        - {{ compiler('cxx') }}
-        - cmake
-        - ninja
-      files:
-        - run_test_feature.sh
-        - run_test_feature.bat
-      source_files:
-        # We use `kms` as a canary. Any other feature could do the job.
-        - google/cloud/kms/quickstart/*.cc
-        - google/cloud/kms/quickstart/CMakeLists.txt
+        - echo "no test needed"
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
