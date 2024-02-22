@@ -41,6 +41,7 @@ outputs:
         - ninja
       host:
         - libgoogle-cloud-devel =={{ version }}
+        - libgoogle-cloud-logging-devel =={{ version }}
         - libabseil
         - libgrpc
         - libprotobuf
@@ -102,6 +103,7 @@ outputs:
         - ninja
       host:
         - libgoogle-cloud-devel =={{ version }}
+        - libgoogle-cloud-logging-devel =={{ version }}
       run:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
         # From the google-cloud-cpp-core feedstock
