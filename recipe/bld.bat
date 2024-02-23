@@ -25,11 +25,15 @@ set DISABLED=%DISABLED%,-compute
 :: `aiplatform` and friends are be provided by `google-cloud-cpp-ai-feedstock`.
 set DISABLED=%DISABLED%,-aiplatform
 set DISABLED=%DISABLED%,-automl
+set DISABLED=%DISABLED%,-contentwarehouse
 set DISABLED=%DISABLED%,-discoveryengine
 set DISABLED=%DISABLED%,-dialogflow_es
 set DISABLED=%DISABLED%,-dialogflow_cx
 set DISABLED=%DISABLED%,-dlp
+set DISABLED=%DISABLED%,-documentai
+set DISABLED=%DISABLED%,-retail
 set DISABLED=%DISABLED%,-speech
+set DISABLED=%DISABLED%,-talent
 
 cmake -G "Ninja" ^
     -S . -B build ^
