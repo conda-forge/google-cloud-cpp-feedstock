@@ -155,9 +155,12 @@ outputs:
         - google/cloud/kms/quickstart/CMakeLists.txt
 
   - name: google-cloud-cpp
+    build:
+      run_exports:
+        - {{ pin_subpackage("libgoogle-cloud-all", max_pin="x.x") }}
     requirements:
       host:
-        - libgoogle-cloud-all-devel =={{ version }}
+        - {{ pin_subpackage("libgoogle-cloud-all-devel", exact=True) }}
       run:
         - {{ pin_subpackage("libgoogle-cloud-all-devel", exact=True) }}
     test:
