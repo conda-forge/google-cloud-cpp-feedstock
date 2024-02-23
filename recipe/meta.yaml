@@ -9,7 +9,7 @@ source:
   sha256: b820159a4e6f17d0225e2266da563e53884567b8b33d00e45b30bc86be90ad1d
 
 build:
-  number: 1
+  number: 2
 requirements:
   build:
     - {{ compiler('c') }}
@@ -153,6 +153,20 @@ outputs:
         # We use `kms` as a canary. Any other feature could do the job.
         - google/cloud/kms/quickstart/*.cc
         - google/cloud/kms/quickstart/CMakeLists.txt
+
+  # compatibility wrapper for legacy all-in-one output
+  - name: google-cloud-cpp
+    build:
+      run_exports:
+        - {{ pin_subpackage("libgoogle-cloud-all", max_pin="x.x") }}
+    requirements:
+      host:
+        - {{ pin_subpackage("libgoogle-cloud-all-devel", exact=True) }}
+      run:
+        - {{ pin_subpackage("libgoogle-cloud-all-devel", exact=True) }}
+    test:
+      commands:
+        - echo "no test needed"
 
 about:
   home: https://github.com/googleapis/google-cloud-cpp
