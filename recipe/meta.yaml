@@ -154,6 +154,7 @@ outputs:
         - google/cloud/kms/quickstart/*.cc
         - google/cloud/kms/quickstart/CMakeLists.txt
 
+  # compatibility wrapper for legacy all-in-one output
   - name: google-cloud-cpp
     build:
       run_exports:
