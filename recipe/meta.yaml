@@ -64,15 +64,15 @@ outputs:
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform
         - libgoogle-cloud-automl
-        # TODO(coryan) - libgoogle-cloud-contentwarehouse
+        - libgoogle-cloud-contentwarehouse
         - libgoogle-cloud-discoveryengine
         - libgoogle-cloud-dialogflow_es
         - libgoogle-cloud-dialogflow_cx
         - libgoogle-cloud-dlp
-        # TODO(coryan) - libgoogle-cloud-documentai
-        # TODO(coryan) - libgoogle-cloud-retail
+        - libgoogle-cloud-documentai
+        - libgoogle-cloud-retail
         - libgoogle-cloud-speech
-        # TODO(coryan) - libgoogle-cloud-talent
+        - libgoogle-cloud-talent
     test:
       commands:
         # We use `kms` as a canary. Any other feature could do the job.
@@ -129,15 +129,15 @@ outputs:
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform-devel
         - libgoogle-cloud-automl-devel
-        # TODO(coryan) - libgoogle-cloud-contentwarehouse-devel
+        - libgoogle-cloud-contentwarehouse-devel
         - libgoogle-cloud-discoveryengine-devel
         - libgoogle-cloud-dialogflow_es-devel
         - libgoogle-cloud-dialogflow_cx-devel
         - libgoogle-cloud-dlp-devel
-        # TODO(coryan) - libgoogle-cloud-documentai-devel
-        # TODO(coryan) - libgoogle-cloud-retail-devel
+        - libgoogle-cloud-documentai-devel
+        - libgoogle-cloud-retail-devel
         - libgoogle-cloud-speech-devel
-        # TODO(coryan) - libgoogle-cloud-talent-devel
+        - libgoogle-cloud-talent-devel
     test:
       commands:
         # presence of headers (they belong in devel package)
