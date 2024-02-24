@@ -33,11 +33,15 @@ feature_list=(
   # Provided by `google-cloud-cpp-compute-ai-feedstock`.
   aiplatform
   automl
+  contentwarehouse
   discoveryengine
   dialogflow_es
   dialogflow_cx
   dlp
+  documentai
+  retail
   speech
+  talent
 )
 disabled=$(printf ",-%s" "${feature_list[@]}")
 

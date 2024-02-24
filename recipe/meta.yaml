@@ -9,7 +9,7 @@ source:
   sha256: b820159a4e6f17d0225e2266da563e53884567b8b33d00e45b30bc86be90ad1d
 
 build:
-  number: 3
+  number: 4
 requirements:
   build:
     - {{ compiler('c') }}
@@ -64,11 +64,15 @@ outputs:
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform
         - libgoogle-cloud-automl
+        - libgoogle-cloud-contentwarehouse
         - libgoogle-cloud-discoveryengine
         - libgoogle-cloud-dialogflow_es
         - libgoogle-cloud-dialogflow_cx
         - libgoogle-cloud-dlp
+        - libgoogle-cloud-documentai
+        - libgoogle-cloud-retail
         - libgoogle-cloud-speech
+        - libgoogle-cloud-talent
     test:
       commands:
         # We use `kms` as a canary. Any other feature could do the job.
@@ -125,11 +129,15 @@ outputs:
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform-devel
         - libgoogle-cloud-automl-devel
+        - libgoogle-cloud-contentwarehouse-devel
         - libgoogle-cloud-discoveryengine-devel
         - libgoogle-cloud-dialogflow_es-devel
         - libgoogle-cloud-dialogflow_cx-devel
         - libgoogle-cloud-dlp-devel
+        - libgoogle-cloud-documentai-devel
+        - libgoogle-cloud-retail-devel
         - libgoogle-cloud-speech-devel
+        - libgoogle-cloud-talent-devel
     test:
       commands:
         # presence of headers (they belong in devel package)
