@@ -29,7 +29,13 @@ feature_list=(
   # Provided by `google-cloud-cpp-bigquery-feedstock`.
   bigquery
   # Provided by `google-cloud-cpp-compute-feedstock`.
+  appengine
+  binaryauthorization
   compute
+  dataproc
+  gkemulticloud
+  osconfig
+  run
   # Provided by `google-cloud-cpp-compute-ai-feedstock`.
   aiplatform
   automl
