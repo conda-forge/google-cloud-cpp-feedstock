@@ -62,13 +62,7 @@ outputs:
         # From the google-cloud-cpp-bigquery feedstock
         - libgoogle-cloud-bigquery
         # From the google-cloud-cpp-compute feedstock
-        # TODO - libgoogle-cloud-appengine
-        # TODO - libgoogle-cloud-binaryauthorization
         - libgoogle-cloud-compute
-        # TODO - libgoogle-cloud-dataproc
-        # TODO - libgoogle-cloud-gkemulticloud
-        # TODO - libgoogle-cloud-osconfig
-        # TODO - libgoogle-cloud-run
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform
         - libgoogle-cloud-automl
@@ -134,13 +128,7 @@ outputs:
         # From the google-cloud-cpp-bigquery feedstock
         - libgoogle-cloud-bigquery-devel
         # From the google-cloud-cpp-compute feedstock
-        # TODO - libgoogle-cloud-appengine-devel
-        # TODO - libgoogle-cloud-binaryauthorization-devel
         - libgoogle-cloud-compute-devel
-        # TODO - libgoogle-cloud-dataproc-devel
-        # TODO - libgoogle-cloud-gkemulticloud-devel
-        # TODO - libgoogle-cloud-osconfig-devel
-        # TODO - libgoogle-cloud-run-devel
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform-devel
         - libgoogle-cloud-automl-devel

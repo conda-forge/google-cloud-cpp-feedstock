@@ -21,13 +21,7 @@ set DISABLED=%DISABLED%,-trace
 :: `bigquery` is provided by `google-cloud-cpp-bigquery-feedstock`.
 set DISABLED=%DISABLED%,-bigquery
 :: `compute` is provided by `google-cloud-cpp-compute-feedstock`.
-set DISABLED=%DISABLED%,-appengine
-set DISABLED=%DISABLED%,-binaryauthorization
 set DISABLED=%DISABLED%,-compute
-set DISABLED=%DISABLED%,-dataproc
-set DISABLED=%DISABLED%,-gkemulticloud
-set DISABLED=%DISABLED%,-osconfig
-set DISABLED=%DISABLED%,-run
 :: `aiplatform` and friends are be provided by `google-cloud-cpp-ai-feedstock`.
 set DISABLED=%DISABLED%,-aiplatform
 set DISABLED=%DISABLED%,-automl
