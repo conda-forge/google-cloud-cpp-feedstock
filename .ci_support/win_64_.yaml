@@ -13,37 +13,37 @@ libabseil:
 libcurl:
 - '8'
 libgoogle_cloud_aiplatform_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_automl_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_bigquery_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_bigtable_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_compute_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_dialogflow_cx_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_dialogflow_es_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_discoveryengine_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_dlp_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_iam_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_oauth2_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_policytroubleshooter_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_pubsub_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_spanner_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_speech_devel:
-- '2.21'
+- '2.23'
 libgoogle_cloud_storage_devel:
-- '2.21'
+- '2.23'
 libgrpc:
 - '1.62'
 libprotobuf:
