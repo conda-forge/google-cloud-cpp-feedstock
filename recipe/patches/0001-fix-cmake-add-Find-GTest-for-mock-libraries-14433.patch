@@ -1,0 +1,140 @@
+From f51fccc465e42ae5e79dea68b724e88ecbe6410d Mon Sep 17 00:00:00 2001
+From: Darren Bolduc <dbolduc@google.com>
+Date: Wed, 3 Jul 2024 15:25:32 -0400
+Subject: [PATCH] fix(cmake): add `Find(GTest)` for mock libraries (#14433)
+
+---
+ CMakeLists.txt                       | 2 +-
+ ci/cloudbuild/builds/demo-install.sh | 1 +
+ cmake/FindGMockWithTargets.cmake     | 7 ++++---
+ doc/packaging.md                     | 9 +++++++++
+ 4 files changed, 15 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7d35a648b7..482fafea68 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -238,7 +238,7 @@ include(CTest)
+ # used in the depends condition of the next option.
+ include(EnableCxxExceptions)
+ 
+-if (BUILD_TESTING)
++if (BUILD_TESTING OR GOOGLE_CLOUD_CPP_WITH_MOCKS)
+     # Discover and add targets for the GTest::gtest and GTest::gmock libraries.
+     include(FindGMockWithTargets)
+ endif ()
+diff --git a/ci/cloudbuild/builds/demo-install.sh b/ci/cloudbuild/builds/demo-install.sh
+index 84b383c179..baf0e86030 100755
+--- a/ci/cloudbuild/builds/demo-install.sh
++++ b/ci/cloudbuild/builds/demo-install.sh
+@@ -50,6 +50,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+diff --git a/cmake/FindGMockWithTargets.cmake b/cmake/FindGMockWithTargets.cmake
+index 63bb8c86cf..691042883f 100644
+--- a/cmake/FindGMockWithTargets.cmake
++++ b/cmake/FindGMockWithTargets.cmake
+@@ -93,15 +93,16 @@ function (google_cloud_cpp_transfer_library_properties target source)
+ endfunction ()
+ 
+ include(CTest)
++find_package(GTest CONFIG QUIET)
++find_package(GMock CONFIG QUIET)
++
+ if (TARGET GTest::gmock)
+     # GTest::gmock is already defined, do not define it again.
+-elseif (NOT BUILD_TESTING)
++elseif (NOT BUILD_TESTING AND NOT GOOGLE_CLOUD_CPP_WITH_MOCKS)
+     # Tests are turned off via -DBUILD_TESTING, do not load the googletest or
+     # googlemock dependency.
+ else ()
+     # Try to find the config package first. If that is not found
+-    find_package(GTest CONFIG QUIET)
+-    find_package(GMock CONFIG QUIET)
+     if (NOT GTest_FOUND)
+         find_package(GTest MODULE REQUIRED)
+ 
+diff --git a/doc/packaging.md b/doc/packaging.md
+index 34392ed6e1..3ab413ea23 100644
+--- a/doc/packaging.md
++++ b/doc/packaging.md
+@@ -228,6 +228,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -331,6 +332,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -480,6 +482,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -594,6 +597,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -761,6 +765,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -947,6 +952,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -1057,6 +1063,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -1231,6 +1238,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+@@ -1452,6 +1460,7 @@ cmake -S . -B cmake-out \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+   -DBUILD_TESTING=OFF \
++  -DGOOGLE_CLOUD_CPP_WITH_MOCKS=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE_EXAMPLES=OFF \
+   -DGOOGLE_CLOUD_CPP_ENABLE=__ga_libraries__,opentelemetry
+ cmake --build cmake-out -- -j "$(nproc)"
+-- 
+2.45.2.803.g4e1b14247a-goog
+
