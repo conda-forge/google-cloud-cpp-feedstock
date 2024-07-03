@@ -16,6 +16,7 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - gtest
     - ninja
     - libgrpc
     - libprotobuf
@@ -111,6 +112,7 @@ outputs:
       host:
         - libgoogle-cloud-devel =={{ version }}
         - libgoogle-cloud-logging-devel =={{ version }}
+        - gtest
       run:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
         # From the google-cloud-cpp-core feedstock
