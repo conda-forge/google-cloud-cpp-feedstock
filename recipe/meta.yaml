@@ -193,7 +193,6 @@ about:
 extra:
   feedstock-name: google-cloud-cpp
   recipe-maintainers:
-    - coryan
     - davidbrochart
     - dbolduc
     - h-vetinari
