@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
   sha256: 333fe00210ce1a6f0c1b51c232438a316eaf2c7a1724f75d0b2c64f8fc456aa7
-  patches:
-    - patches/0001-fix-cmake-add-Find-GTest-for-mock-libraries-14433.patch
 
 build:
   number: 0
