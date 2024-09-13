@@ -3,7 +3,7 @@ BUILD:
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 c_stdlib:
 - sysroot
 c_stdlib_version:
@@ -19,7 +19,7 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libabseil:
@@ -27,37 +27,37 @@ libabseil:
 libcurl:
 - '8'
 libgoogle_cloud_aiplatform_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_automl_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_bigquery_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_bigtable_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_compute_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_dialogflow_cx_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_dialogflow_es_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_discoveryengine_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_dlp_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_iam_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_oauth2_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_policytroubleshooter_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_pubsub_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_spanner_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_speech_devel:
-- '2.26'
+- '2.28'
 libgoogle_cloud_storage_devel:
-- '2.26'
+- '2.28'
 libgrpc:
 - '1.62'
 libprotobuf:
