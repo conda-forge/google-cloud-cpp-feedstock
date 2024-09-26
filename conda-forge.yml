@@ -1,10 +1,10 @@
 azure:
   free_disk_space: true
+  settings_linux:
+    swapfile_size: 10GiB
   settings_win:
     variables:
       CONDA_BLD_PATH: C:\\bld\\
-  settings_linux:
-    swapfile_size: 10GiB
 bot:
   automerge: true
 build_platform:
@@ -18,7 +18,7 @@ github:
   branch_name: main
   tooling_branch_name: main
 remote_ci_setup:
- - conda-forge-ci-setup=4
- - python=3.11
- - py-lief=0.12.3
+- conda-forge-ci-setup=4
+- python=3.11
+- py-lief=0.12.3
 test: native_and_emulated
