@@ -204,6 +204,3 @@ Feedstock Maintainers
 * [@h-vetinari](https://github.com/h-vetinari/)
 * [@xhochy](https://github.com/xhochy/)
 
-
-<!-- dummy commit to enable rerendering -->
-
