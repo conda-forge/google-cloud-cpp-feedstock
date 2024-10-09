@@ -22,3 +22,5 @@ remote_ci_setup:
 - python=3.11
 - py-lief=0.12.3
 test: native_and_emulated
+conda_build:
+  error_overlinking: true
