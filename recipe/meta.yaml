@@ -51,6 +51,7 @@ outputs:
         - libprotobuf
       run:
         # From the google-cloud-cpp-core feedstock
+        - libcrc32c
         - libgoogle-cloud-oauth2
         - libgoogle-cloud-bigtable
         - libgoogle-cloud-iam
