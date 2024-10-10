@@ -20,6 +20,8 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libabseil:
 - '20240722'
+libcrc32c:
+- '1.1'
 libcurl:
 - '8'
 libgoogle_cloud_aiplatform_devel:
