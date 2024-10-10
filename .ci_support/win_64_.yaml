@@ -10,6 +10,8 @@ cxx_compiler:
 - vs2019
 libabseil:
 - '20240722'
+libcrc32c:
+- '1.1'
 libcurl:
 - '8'
 libgoogle_cloud_aiplatform_devel:

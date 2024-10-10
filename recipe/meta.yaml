@@ -1,4 +1,4 @@
-{% set version = "2.29.0" %}
+{% set version = "2.30.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: 758e1eca8186b962516c0659b34ce1768ba1c9769cfd998c5bbffb084ad901ff
+  sha256: 170650b11ece54977b42dd85be648b6bd2d614ff68ea6863a0013865e576b49c
 
 build:
-  number: 1
+  number: 0
 requirements:
   build:
     - {{ compiler('c') }}
@@ -24,6 +24,7 @@ requirements:
     - gtest
     - libgoogle-cloud-devel =={{ version }}
     - libabseil
+    - libcrc32c
     - libcurl
     - libgrpc
     - libprotobuf
@@ -46,8 +47,11 @@ outputs:
         - libgoogle-cloud-devel =={{ version }}
         - libgoogle-cloud-logging-devel =={{ version }}
         - libabseil
+        - libcrc32c
+        - libcurl
         - libgrpc
         - libprotobuf
+        - openssl
       run:
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-oauth2
