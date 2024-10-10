@@ -47,11 +47,11 @@ outputs:
         - libgoogle-cloud-devel =={{ version }}
         - libgoogle-cloud-logging-devel =={{ version }}
         - libabseil
+        - libcrc32c
         - libgrpc
         - libprotobuf
       run:
         # From the google-cloud-cpp-core feedstock
-        - libcrc32c
         - libgoogle-cloud-oauth2
         - libgoogle-cloud-bigtable
         - libgoogle-cloud-iam
