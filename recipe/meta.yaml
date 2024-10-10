@@ -48,8 +48,10 @@ outputs:
         - libgoogle-cloud-logging-devel =={{ version }}
         - libabseil
         - libcrc32c
+        - libcurl
         - libgrpc
         - libprotobuf
+        - openssl
       run:
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-oauth2
