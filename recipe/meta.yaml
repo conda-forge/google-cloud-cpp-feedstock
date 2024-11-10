@@ -119,62 +119,62 @@ outputs:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-devel =={{ version }}
-        - libgoogle-cloud-bigtable-devel
-        - libgoogle-cloud-iam-devel
-        - libgoogle-cloud-logging-devel
-        - libgoogle-cloud-monitoring-devel
-        - libgoogle-cloud-oauth2-devel
-        - libgoogle-cloud-policytroubleshooter-devel
-        - libgoogle-cloud-pubsub-devel
-        - libgoogle-cloud-spanner-devel
-        - libgoogle-cloud-storage-devel
-        - libgoogle-cloud-trace-devel
+        - libgoogle-cloud-bigtable-devel =={{ version }}
+        - libgoogle-cloud-iam-devel =={{ version }}
+        - libgoogle-cloud-logging-devel =={{ version }}
+        - libgoogle-cloud-monitoring-devel =={{ version }}
+        - libgoogle-cloud-oauth2-devel =={{ version }}
+        - libgoogle-cloud-policytroubleshooter-devel =={{ version }}
+        - libgoogle-cloud-pubsub-devel =={{ version }}
+        - libgoogle-cloud-spanner-devel =={{ version }}
+        - libgoogle-cloud-storage-devel =={{ version }}
+        - libgoogle-cloud-trace-devel =={{ version }}
         # From the google-cloud-cpp-bigquery feedstock
-        - libgoogle-cloud-bigquery-devel
+        - libgoogle-cloud-bigquery-devel =={{ version }}
         # From the google-cloud-cpp-compute feedstock
-        - libgoogle-cloud-compute-devel
+        - libgoogle-cloud-compute-devel =={{ version }}
         # From the google-cloud-cpp-ai feedstock
-        - libgoogle-cloud-aiplatform-devel
-        - libgoogle-cloud-automl-devel
-        - libgoogle-cloud-contentwarehouse-devel
-        - libgoogle-cloud-discoveryengine-devel
-        - libgoogle-cloud-dialogflow_es-devel
-        - libgoogle-cloud-dialogflow_cx-devel
-        - libgoogle-cloud-dlp-devel
-        - libgoogle-cloud-documentai-devel
-        - libgoogle-cloud-retail-devel
-        - libgoogle-cloud-speech-devel
-        - libgoogle-cloud-talent-devel
+        - libgoogle-cloud-aiplatform-devel =={{ version }}
+        - libgoogle-cloud-automl-devel =={{ version }}
+        - libgoogle-cloud-contentwarehouse-devel =={{ version }}
+        - libgoogle-cloud-discoveryengine-devel =={{ version }}
+        - libgoogle-cloud-dialogflow_es-devel =={{ version }}
+        - libgoogle-cloud-dialogflow_cx-devel =={{ version }}
+        - libgoogle-cloud-dlp-devel =={{ version }}
+        - libgoogle-cloud-documentai-devel =={{ version }}
+        - libgoogle-cloud-retail-devel =={{ version }}
+        - libgoogle-cloud-speech-devel =={{ version }}
+        - libgoogle-cloud-talent-devel =={{ version }}
       run:
         - {{ pin_subpackage("libgoogle-cloud-all", exact=True) }}
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-devel =={{ version }}
-        - libgoogle-cloud-bigtable-devel
-        - libgoogle-cloud-iam-devel
-        - libgoogle-cloud-logging-devel
-        - libgoogle-cloud-monitoring-devel
-        - libgoogle-cloud-oauth2-devel
-        - libgoogle-cloud-policytroubleshooter-devel
-        - libgoogle-cloud-pubsub-devel
-        - libgoogle-cloud-spanner-devel
-        - libgoogle-cloud-storage-devel
-        - libgoogle-cloud-trace-devel
+        - libgoogle-cloud-bigtable-devel =={{ version }}
+        - libgoogle-cloud-iam-devel =={{ version }}
+        - libgoogle-cloud-logging-devel =={{ version }}
+        - libgoogle-cloud-monitoring-devel =={{ version }}
+        - libgoogle-cloud-oauth2-devel =={{ version }}
+        - libgoogle-cloud-policytroubleshooter-devel =={{ version }}
+        - libgoogle-cloud-pubsub-devel =={{ version }}
+        - libgoogle-cloud-spanner-devel =={{ version }}
+        - libgoogle-cloud-storage-devel =={{ version }}
+        - libgoogle-cloud-trace-devel =={{ version }}
         # From the google-cloud-cpp-bigquery feedstock
-        - libgoogle-cloud-bigquery-devel
+        - libgoogle-cloud-bigquery-devel =={{ version }}
         # From the google-cloud-cpp-compute feedstock
-        - libgoogle-cloud-compute-devel
+        - libgoogle-cloud-compute-devel =={{ version }}
         # From the google-cloud-cpp-ai feedstock
-        - libgoogle-cloud-aiplatform-devel
-        - libgoogle-cloud-automl-devel
-        - libgoogle-cloud-contentwarehouse-devel
-        - libgoogle-cloud-discoveryengine-devel
-        - libgoogle-cloud-dialogflow_es-devel
-        - libgoogle-cloud-dialogflow_cx-devel
-        - libgoogle-cloud-dlp-devel
-        - libgoogle-cloud-documentai-devel
-        - libgoogle-cloud-retail-devel
-        - libgoogle-cloud-speech-devel
-        - libgoogle-cloud-talent-devel
+        - libgoogle-cloud-aiplatform-devel =={{ version }}
+        - libgoogle-cloud-automl-devel =={{ version }}
+        - libgoogle-cloud-contentwarehouse-devel =={{ version }}
+        - libgoogle-cloud-discoveryengine-devel =={{ version }}
+        - libgoogle-cloud-dialogflow_es-devel =={{ version }}
+        - libgoogle-cloud-dialogflow_cx-devel =={{ version }}
+        - libgoogle-cloud-dlp-devel =={{ version }}
+        - libgoogle-cloud-documentai-devel =={{ version }}
+        - libgoogle-cloud-retail-devel =={{ version }}
+        - libgoogle-cloud-speech-devel =={{ version }}
+        - libgoogle-cloud-talent-devel =={{ version }}
     test:
       commands:
         # presence of headers (they belong in devel package)
