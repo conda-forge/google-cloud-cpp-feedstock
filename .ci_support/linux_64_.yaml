@@ -17,45 +17,13 @@ cxx_compiler:
 cxx_compiler_version:
 - '13'
 docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 libabseil:
 - '20240722'
 libcrc32c:
 - '1.1'
 libcurl:
 - '8'
-libgoogle_cloud_aiplatform_devel:
-- '2.30'
-libgoogle_cloud_automl_devel:
-- '2.30'
-libgoogle_cloud_bigquery_devel:
-- '2.30'
-libgoogle_cloud_bigtable_devel:
-- '2.30'
-libgoogle_cloud_compute_devel:
-- '2.30'
-libgoogle_cloud_dialogflow_cx_devel:
-- '2.30'
-libgoogle_cloud_dialogflow_es_devel:
-- '2.30'
-libgoogle_cloud_discoveryengine_devel:
-- '2.30'
-libgoogle_cloud_dlp_devel:
-- '2.30'
-libgoogle_cloud_iam_devel:
-- '2.30'
-libgoogle_cloud_oauth2_devel:
-- '2.30'
-libgoogle_cloud_policytroubleshooter_devel:
-- '2.30'
-libgoogle_cloud_pubsub_devel:
-- '2.30'
-libgoogle_cloud_spanner_devel:
-- '2.30'
-libgoogle_cloud_speech_devel:
-- '2.30'
-libgoogle_cloud_storage_devel:
-- '2.30'
 libgrpc:
 - '1.67'
 libprotobuf:
