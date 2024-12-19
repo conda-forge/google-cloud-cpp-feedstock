@@ -1,4 +1,4 @@
-{% set version = "2.32.0" %}
+{% set version = "2.33.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: db69dd73ef4af8b2e816d80ded04950036d0e0dccc274f8c3d3ed1d7f5692a1b
+  sha256: e53ba3799c052d97acac9a6a6b27af24ce822dbde7bfde973bac9e5da714e6b2
 
 build:
   number: 0
