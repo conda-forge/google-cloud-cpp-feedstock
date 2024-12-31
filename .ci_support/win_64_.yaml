@@ -17,7 +17,7 @@ libcurl:
 libgrpc:
 - '1.67'
 libprotobuf:
-- 5.28.2
+- 5.28.3
 openssl:
 - '3'
 target_platform:
