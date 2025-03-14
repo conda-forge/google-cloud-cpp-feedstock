@@ -15,7 +15,7 @@ libcrc32c:
 libcurl:
 - '8'
 libgrpc:
-- '1.71'
+- '1.70'
 libprotobuf:
 - 5.29.3
 openssl:
