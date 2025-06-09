@@ -1,4 +1,4 @@
-{% set version = "2.36.0" %}
+{% set version = "2.38.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: 9a6e182fd658ba114512cf21bd9f274a315830638f62f0b831113df9e674bea0
+  sha256: f1493b2dce9b379714342f2be7ccb483d70d13aac09d4a90ae3b4756693b72fc
 
 build:
-  number: 1
+  number: 0
   # TODO: if you know how to fix windows, please raise a PR!
   skip: true  # [win]
 
