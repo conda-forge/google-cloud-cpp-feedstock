@@ -19,15 +19,15 @@ cxx_compiler:
 cxx_compiler_version:
 - '18'
 libabseil:
-- '20240722'
+- '20250512'
 libcrc32c:
 - '1.1'
 libcurl:
 - '8'
 libgrpc:
-- '1.67'
+- '1.73'
 libprotobuf:
-- 5.28.3
+- 6.31.1
 macos_machine:
 - arm64-apple-darwin20.0.0
 openssl:
