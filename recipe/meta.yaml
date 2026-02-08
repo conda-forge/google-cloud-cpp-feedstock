@@ -9,7 +9,7 @@ source:
   sha256: 629cbfcc5bd581d38277ba8fa94a5b6591af1e0f6af0dab6d1d9ed796bf48b61
 
 build:
-  number: 0
+  number: 1
   # TODO: if you know how to fix windows, please raise a PR!
   skip: true  # [win]
 
