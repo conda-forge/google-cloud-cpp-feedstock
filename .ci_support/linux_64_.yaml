@@ -6,8 +6,6 @@ c_stdlib:
 - sysroot
 c_stdlib_version:
 - '2.17'
-cdt_name:
-- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,17 +17,17 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 libabseil:
-- '20250512'
+- '20260107'
 libcrc32c:
 - '1.1'
 libcurl:
 - '8'
 libgrpc:
-- '1.73'
+- '1.78'
 libprotobuf:
-- 6.31.1
+- 6.33.5
 openssl:
-- '3'
+- '3.5'
 target_platform:
 - linux-64
 zip_keys:
