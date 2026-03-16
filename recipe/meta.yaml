@@ -57,6 +57,7 @@ outputs:
         - openssl
         # From the google-cloud-cpp-core feedstock
         - libgoogle-cloud-oauth2
+        - libgoogle-cloud-opentelemetry
         - libgoogle-cloud-bigtable
         - libgoogle-cloud-iam
         - libgoogle-cloud-logging
@@ -127,6 +128,7 @@ outputs:
         - libgoogle-cloud-logging-devel =={{ version }}
         - libgoogle-cloud-monitoring-devel =={{ version }}
         - libgoogle-cloud-oauth2-devel =={{ version }}
+        - libgoogle-cloud-opentelemetry-devel =={{ version }}
         - libgoogle-cloud-policytroubleshooter-devel =={{ version }}
         - libgoogle-cloud-pubsub-devel =={{ version }}
         - libgoogle-cloud-spanner-devel =={{ version }}
@@ -157,6 +159,7 @@ outputs:
         - libgoogle-cloud-logging-devel =={{ version }}
         - libgoogle-cloud-monitoring-devel =={{ version }}
         - libgoogle-cloud-oauth2-devel =={{ version }}
+        - libgoogle-cloud-opentelemetry-devel =={{ version }}
         - libgoogle-cloud-policytroubleshooter-devel =={{ version }}
         - libgoogle-cloud-pubsub-devel =={{ version }}
         - libgoogle-cloud-spanner-devel =={{ version }}

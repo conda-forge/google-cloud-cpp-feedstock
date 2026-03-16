@@ -17,6 +17,7 @@ fi
 feature_list=(
   # Provided by `google-cloud-cpp-core-feedstock`
   oauth2
+  opentelemetry
   bigtable
   iam
   logging
