@@ -184,8 +184,8 @@ outputs:
     test:
       commands:
         # presence of headers (they belong in devel package)
-        - test -f $PREFIX/include/google/cloud/kms/ekm_client.h            # [unix]
-        - if not exist %LIBRARY_INC%\google\cloud\kms\ekm_client.h exit 1  # [win]
+        - test -f $PREFIX/include/google/cloud/kms/v1/ekm_client.h            # [unix]
+        - if not exist %LIBRARY_INC%\google\cloud\kms\v1\ekm_client.h exit 1  # [win]
 
         # presence of static library (on Windows)
         - if not exist %LIBRARY_LIB%\google_cloud_cpp_kms.lib exit 1  # [win]
