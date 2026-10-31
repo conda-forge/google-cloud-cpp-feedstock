@@ -73,7 +73,6 @@ outputs:
         - libgoogle-cloud-compute               =={{ version }}
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform            =={{ version }}
-        - libgoogle-cloud-automl                =={{ version }}
         - libgoogle-cloud-contentwarehouse      =={{ version }}
         - libgoogle-cloud-discoveryengine       =={{ version }}
         - libgoogle-cloud-dialogflow_es         =={{ version }}
@@ -140,7 +139,6 @@ outputs:
         - libgoogle-cloud-compute-devel                 =={{ version }}
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform-devel              =={{ version }}
-        - libgoogle-cloud-automl-devel                  =={{ version }}
         - libgoogle-cloud-contentwarehouse-devel        =={{ version }}
         - libgoogle-cloud-discoveryengine-devel         =={{ version }}
         - libgoogle-cloud-dialogflow_es-devel           =={{ version }}
@@ -171,7 +169,6 @@ outputs:
         - libgoogle-cloud-compute-devel                 =={{ version }}
         # From the google-cloud-cpp-ai feedstock
         - libgoogle-cloud-aiplatform-devel              =={{ version }}
-        - libgoogle-cloud-automl-devel                  =={{ version }}
         - libgoogle-cloud-contentwarehouse-devel        =={{ version }}
         - libgoogle-cloud-discoveryengine-devel         =={{ version }}
         - libgoogle-cloud-dialogflow_es-devel           =={{ version }}
