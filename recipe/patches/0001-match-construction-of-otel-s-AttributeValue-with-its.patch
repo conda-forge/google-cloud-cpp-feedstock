@@ -1,0 +1,33 @@
+From 35a5411c318ee7415d77bc6a1bc8379d5b782150 Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Sun, 1 Nov 2026 14:48:13 +1100
+Subject: [PATCH] match construction of otel's AttributeValue with its
+ underlying variant
+
+`size_t` == `unsigned long` is not part of the variant; c.f.
+```
+$SRC_DIR/google/cloud/storage/internal/async/connection_tracing.cc:70:26: error: reference to type 'const common::AttributeValue' (aka 'const variant<bool, int, long long, unsigned int, double, const char *, opentelemetry::nostd::string_view, span<const bool>, span<const int>, span<const long long>, span<const unsigned int>, span<const double>, span<const nostd::string_view>, unsigned long long, span<const unsigned long long>, span<const unsigned char>>') could not bind to an rvalue of type 'size_type' (aka 'unsigned long')
+   70 |                          ranges.size());
+      |                          ^~~~~~~~~~~~~
+$PREFIX/include/opentelemetry/trace/span.h:79:59: note: passing argument to parameter 'value' here
+   79 |                             const common::AttributeValue &value) noexcept = 0;
+      |                                                           ^
+1 error generated.
+```
+---
+ google/cloud/storage/internal/async/connection_tracing.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/google/cloud/storage/internal/async/connection_tracing.cc b/google/cloud/storage/internal/async/connection_tracing.cc
+index dd03daae..229d9341 100644
+--- a/google/cloud/storage/internal/async/connection_tracing.cc
++++ b/google/cloud/storage/internal/async/connection_tracing.cc
+@@ -67,7 +67,7 @@ class AsyncConnectionTracing : public storage::AsyncConnection {
+     if (p.options.has<ReadRangesOption>()) {
+       auto const& ranges = p.options.get<ReadRangesOption>();
+       span->SetAttribute("gl-cpp.initial-read-ranges.ranges-count",
+-                         ranges.size());
++                         static_cast<unsigned long long>(ranges.size()));
+     }
+     internal::OTelScope scope(span);
+     return impl_->Open(std::move(p))
