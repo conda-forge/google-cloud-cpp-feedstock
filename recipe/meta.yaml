@@ -11,7 +11,7 @@ source:
     - patches/0001-match-construction-of-otel-s-AttributeValue-with-its.patch   # [osx]
 
 build:
-  number: 0
+  number: 1
   # TODO: if you know how to fix windows, please raise a PR!
   skip: true  # [win]
 
