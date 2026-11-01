@@ -2,6 +2,7 @@ bot:
   automerge: true
 build_platform:
   linux_ppc64le: linux_64
+  osx_64: osx_arm64
 conda_build:
   error_overlinking: true
   pkg_format: '2'
