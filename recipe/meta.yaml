@@ -1,4 +1,4 @@
-{% set version = "3.12.0" %}
+{% set version = "3.13.0" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: b50ab4e2123f3d5982961ca6e497a952dcf820a57162c087e5478e2ffe97b30e
+  sha256: 3fefa2ca821ec8dd26f2d5ffc89611e74259c76a459fce3fd3cf46013785e423
   patches:
     - patches/0001-match-construction-of-otel-s-AttributeValue-with-its.patch   # [osx]
 
 build:
-  number: 1
+  number: 0
   # TODO: if you know how to fix windows, please raise a PR!
   skip: true  # [win]
 
