@@ -1,7 +1,7 @@
-From 35a5411c318ee7415d77bc6a1bc8379d5b782150 Mon Sep 17 00:00:00 2001
+From 9f6ad12f8ac7bf99e7210f2598d8151e9cf7d3ca Mon Sep 17 00:00:00 2001
 From: "H. Vetinari" <h.vetinari@gmx.com>
 Date: Sun, 1 Nov 2026 14:48:13 +1100
-Subject: [PATCH] match construction of otel's AttributeValue with its
+Subject: [PATCH 2/2] match construction of otel's AttributeValue with its
  underlying variant
 
 `size_t` == `unsigned long` is not part of the variant; c.f.

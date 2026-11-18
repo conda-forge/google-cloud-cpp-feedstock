@@ -8,7 +8,8 @@ source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
   sha256: 3fefa2ca821ec8dd26f2d5ffc89611e74259c76a459fce3fd3cf46013785e423
   patches:
-    - patches/0001-match-construction-of-otel-s-AttributeValue-with-its.patch   # [osx]
+    - patches/0001-Adapt-for-OpenTelemetry-1.25.patch
+    - patches/0002-match-construction-of-otel-s-AttributeValue-with-its.patch   # [osx]
 
 build:
   number: 0
