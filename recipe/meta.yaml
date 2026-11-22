@@ -1,4 +1,4 @@
-{% set version = "3.14.0" %}
+{% set version = "3.14.1" %}
 
 package:
   name: google-cloud-cpp-split
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/googleapis/google-cloud-cpp/archive/v{{ version }}.tar.gz
-  sha256: 2f5648f6c1c57532d9146b2c22b649f5f68bdcb50932e3610d6885d5a8b6efc8
+  sha256: e8ed19ddb68755332262b613dea3f98d2a044fceecd7a60d862523b6eba84daf
   patches:
     - patches/0001-Adapt-for-OpenTelemetry-1.25.patch
     - patches/0002-match-construction-of-otel-s-AttributeValue-with-its.patch   # [osx]
